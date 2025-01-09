@@ -1,5 +1,5 @@
 import { motion } from "framer-motion"
-import { transitionSpring } from "./Hero"
+import { transitionSpring } from "."
 import { useEffect, useState } from "react"
 
 export function LeftBrain() {

@@ -3,7 +3,7 @@
 import { useEffect, useState } from "react"
 import { AnimatePresence } from "motion/react"
 import { Greeting } from "@/components/Greeting"
-import { Hero } from "@/components/Hero"
+import { Hero } from "@/components/hero"
 
 export default function Home() {
   const [showGreeting, setShowGreeting] = useState(false)

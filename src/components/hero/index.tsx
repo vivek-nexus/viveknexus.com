@@ -2,6 +2,7 @@ import { motion } from "motion/react"
 import { useEffect, useState } from "react"
 import { LeftBrain } from "./LeftBrain"
 import { RightBrain } from "./RightBrain"
+import { BackgroundLines } from "../ui/background-lines"
 
 
 const transitionTween = {
@@ -89,7 +90,7 @@ export function Hero() {
                             transition: transitionTween,
                         },
                         secondAnimation: {
-                            background: "radial-gradient(41.02% 54.97%at 50% 50%, #555555 10.36%, #000000 60.9%)",
+                            background: "radial-gradient(41.02% 54.97% at 50% 50%, #555555 10.36%, #000000 60.9%)",
                             transition: transitionSpring,
                         },
                     }}
@@ -99,6 +100,9 @@ export function Hero() {
                         }
                     }}
                 >
+                    <BackgroundLines className="absolute w-full h-full">
+                        <></>
+                    </BackgroundLines>
                     {/* LINE */}
                     <motion.hr
                         className="absolute top-1/2 left-1/2"

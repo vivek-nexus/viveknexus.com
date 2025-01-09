@@ -9,6 +9,7 @@ const suse = SUSE({
 export const metadata: Metadata = {
   title: "Vivek G",
   description: "Opinionated designer + action biased engineer. Currently Senior Product Designer at BrowserStack.",
+  icons: "/face-white-bg.svg"
 }
 
 export default function RootLayout({
