@@ -4,10 +4,12 @@ import { useEffect, useState } from "react"
 import { AnimatePresence } from "motion/react"
 import { Greeting } from "@/components/Greeting"
 import { Hero } from "@/components/hero"
+import { Design } from "@/components/design"
 
 export default function Home() {
   const [showGreeting, setShowGreeting] = useState(false)
   const [showHero, setShowHero] = useState(false)
+  const [showPage, setShowPage] = useState(false)
   const [userIp, setUserIp] = useState("<getting your ip address>")
 
   useEffect(() => {
@@ -32,9 +34,14 @@ export default function Home() {
       setShowHero(true)
     }, 4550)
 
+    const showPageTimeout = setTimeout(() => {
+      setShowPage(true)
+    }, 6800)
+
     return (() => {
       clearTimeout(hideGreetingTimeout)
       clearTimeout(showHeroTimeout)
+      clearTimeout(showPageTimeout)
     })
   }, [])
 
@@ -43,9 +50,8 @@ export default function Home() {
       <AnimatePresence>
         {showGreeting && <Greeting userIp={userIp} />}
       </AnimatePresence>
-      <AnimatePresence>
-        {showHero && <Hero />}
-      </AnimatePresence>
+      {showHero && <Hero />}
+      {showPage && <Design />}
     </>
   )
 }

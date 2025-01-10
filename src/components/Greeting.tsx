@@ -3,7 +3,7 @@ import { motion } from "motion/react"
 export function Greeting({ userIp }: { userIp: string }) {
     return (
         < motion.div
-            className="w-dvw h-dvh text-center bg-background-grid bg-cover bg-center bg-no-repeat flex flex-col justify-center items-center"
+            className="w-full h-dvh text-center bg-background-grid bg-cover bg-center bg-no-repeat flex flex-col justify-center items-center"
             initial={{ opacity: 0 }}
             animate={{
                 opacity: 100,
@@ -25,7 +25,7 @@ export function Greeting({ userIp }: { userIp: string }) {
                 <span className="underline underline-offset-4">{userIp}!</span>
             </p>
             <h2 className="text-2xl md:text-5xl font-extralight mb-9 bg-gradient-to-b from-white to-[#666666] text-gradient">
-                Welcome to my corner of the internet!
+                Welcome to my corner on the internet!
             </h2>
         </motion.div >
     )

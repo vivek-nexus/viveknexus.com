@@ -51,7 +51,7 @@ export function Hero() {
 
     return (
         <motion.div
-            className="overflow-x-clip mt-16 md:mt-24"
+            className="overflow-x-clip mt-16 md:mt-24 flex flex-col items-center"
             initial={{ opacity: 0 }}
             animate={{
                 opacity: 100,
@@ -110,7 +110,8 @@ export function Hero() {
                             backgroundColor: "rgba(255,255,255,0)",
                             x: "-50%",
                             y: "-50%",
-                            width: "90vw"
+                            width: "50vw",
+                            opacity: 0
                         }}
                         animate={animationName}
                         variants={{
@@ -118,7 +119,8 @@ export function Hero() {
                                 backgroundColor: "rgba(255,255,255,0.5)",
                                 x: "-50%",
                                 y: "-50%",
-                                width: "7.5vw",
+                                width: "5vw",
+                                opacity: 1,
                                 transition: transitionTween,
                             },
                             secondAnimation: {
@@ -126,6 +128,7 @@ export function Hero() {
                                 x: "-50%",
                                 y: "-50%",
                                 width: 0,
+                                opacity: 1,
                                 transition: transitionSpring
                             },
                         }}
@@ -163,18 +166,20 @@ export function Hero() {
                     >
                     </motion.div>
                     {/* LEFT BRAIN CONTAINER */}
-                    <div className="relative">
+                    <div className="relative col-span-1">
                         <motion.div
                             className="absolute right-0 top-1/2 cursor-pointer"
-                            initial={{ x: -792, y: "-50%" }}
+                            initial={{ x: -540, y: "-50%", opacity: 0 }}
                             animate={animationName}
                             variants={{
                                 firstAnimation: {
-                                    x: -100,
+                                    x: -50,
+                                    opacity: 1,
                                     transition: transitionTween,
                                 },
                                 secondAnimation: {
                                     x: 0,
+                                    opacity: 1,
                                     transition: transitionSpring,
                                 },
                             }}
@@ -186,16 +191,18 @@ export function Hero() {
                             <LeftBrain />
                         </motion.div>
                         <motion.h2
-                            className="text-[#C0C0C0] text-right text-[64px] absolute right-8 top-1/2"
-                            initial={{ x: -1109, y: "-50%" }}
+                            className="text-[#dcdcdc] text-right text-[64px] absolute right-8 top-1/2"
+                            initial={{ x: -780, y: "-50%", opacity: 0 }}
                             animate={animationName}
                             variants={{
                                 firstAnimation: {
-                                    x: -140,
+                                    x: -100,
+                                    opacity: 1,
                                     transition: transitionTween,
                                 },
                                 secondAnimation: {
                                     x: 0,
+                                    opacity: 1,
                                     transition: transitionSpring,
                                 },
                             }}
@@ -204,18 +211,20 @@ export function Hero() {
                         </motion.h2>
                     </div>
                     {/* RIGHT BRAIN CONTAINER */}
-                    <div className="relative">
+                    <div className="relative col-span-1">
                         <motion.div
                             className="absolute left-0 top-1/2 cursor-pointer"
-                            initial={{ x: 792, y: "-50%", scaleX: -1 }}
+                            initial={{ x: 540, y: "-50%", scaleX: -1, opacity: 0 }}
                             animate={animationName}
                             variants={{
                                 firstAnimation: {
-                                    x: 100,
+                                    x: 50,
+                                    opacity: 1,
                                     transition: transitionTween,
                                 },
                                 secondAnimation: {
                                     x: 0,
+                                    opacity: 1,
                                     transition: transitionSpring,
                                 },
                             }}
@@ -227,16 +236,18 @@ export function Hero() {
                             <RightBrain />
                         </motion.div>
                         <motion.h2
-                            className="text-[#C0C0C0] text-left text-[64px] absolute left-8 top-1/2"
-                            initial={{ x: 1109, y: "-50%" }}
+                            className="text-[#dcdcdc] text-left text-[64px] absolute left-8 top-1/2"
+                            initial={{ x: 780, y: "-50%", opacity: 0 }}
                             animate={animationName}
                             variants={{
                                 firstAnimation: {
-                                    x: 140,
+                                    x: 100,
+                                    opacity: 1,
                                     transition: transitionTween,
                                 },
                                 secondAnimation: {
                                     x: 0,
+                                    opacity: 1,
                                     transition: transitionSpring,
                                 },
                             }}
@@ -266,7 +277,7 @@ export function Hero() {
                 }}
             >
                 <img src="/briefcase-icon.svg" alt="Briefcase icon" />
-                <p className="text-[#C0C0C0] text-center text-2xl font-extralight whitespace-nowrap">
+                <p className="text-[#dcdcdc] text-center text-2xl font-extralight whitespace-nowrap">
                     Senior Product Designer at BrowserStack
                 </p>
             </motion.div>

@@ -9,7 +9,7 @@ const suse = SUSE({
 export const metadata: Metadata = {
   title: "Vivek G",
   description: "Opinionated designer + action biased engineer. Currently Senior Product Designer at BrowserStack.",
-  icons: "/face-white-bg.svg"
+  icons: "/face-white-bg.ico"
 }
 
 export default function RootLayout({
@@ -20,7 +20,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${suse.className} antialiased bg-black text-[#C0C0C0]`}
+        className={`${suse.className} antialiased bg-black text-[#C0C0C0] max-w-[1480px] mx-auto`}
       >
         {children}
       </body>
