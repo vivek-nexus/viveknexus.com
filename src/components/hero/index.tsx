@@ -50,8 +50,8 @@ export function Hero() {
     }, [])
 
     return (
-        <motion.div
-            className="overflow-x-clip mt-16 md:mt-24 flex flex-col items-center"
+        <motion.section
+            className="mt-16 md:mt-24 mb-24 md:mb-48 overflow-x-clip flex flex-col items-center"
             initial={{ opacity: 0 }}
             animate={{
                 opacity: 100,
@@ -276,11 +276,12 @@ export function Hero() {
                     },
                 }}
             >
-                <img src="/briefcase-icon.svg" alt="Briefcase icon" />
-                <p className="text-[#dcdcdc] text-center text-2xl font-extralight whitespace-nowrap">
+                {/* Increased dimensions to prevent text being unreadable in mobile */}
+                <img src="/icons/briefcase-icon.svg" alt="Briefcase icon" className={`${isLandscape ? `h-auto` : `h-8`}`} />
+                <p className={`text-[#dcdcdc] text-center ${isLandscape ? `text-2xl` : `text-4xl`} font-extralight whitespace-nowrap`}>
                     Senior Product Designer at BrowserStack
                 </p>
             </motion.div>
-        </motion.div>
+        </motion.section>
     )
 }

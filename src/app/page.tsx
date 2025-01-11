@@ -36,7 +36,7 @@ export default function Home() {
 
     const showPageTimeout = setTimeout(() => {
       setShowPage(true)
-    }, 6800)
+    }, 7500)
 
     return (() => {
       clearTimeout(hideGreetingTimeout)
@@ -46,12 +46,12 @@ export default function Home() {
   }, [])
 
   return (
-    <>
+    <main>
       <AnimatePresence>
         {showGreeting && <Greeting userIp={userIp} />}
       </AnimatePresence>
       {showHero && <Hero />}
       {showPage && <Design />}
-    </>
+    </main>
   )
 }
