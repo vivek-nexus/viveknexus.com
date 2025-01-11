@@ -5,6 +5,8 @@ import { AnimatePresence } from "motion/react"
 import { Greeting } from "@/components/Greeting"
 import { Hero } from "@/components/hero"
 import { Design } from "@/components/design"
+import { Contact } from "@/components/Contact"
+import { Engineering } from "@/components/engineering"
 
 export default function Home() {
   const [showGreeting, setShowGreeting] = useState(false)
@@ -51,7 +53,13 @@ export default function Home() {
         {showGreeting && <Greeting userIp={userIp} />}
       </AnimatePresence>
       {showHero && <Hero />}
-      {showPage && <Design />}
+      {showPage &&
+        <>
+          <Design />
+          <Engineering />
+          <Contact />
+        </>
+      }
     </main>
   )
 }

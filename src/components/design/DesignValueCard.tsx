@@ -57,7 +57,7 @@ export function DesignValueCard({ text1, text2, className }: { text1: string, te
                     animate={{ opacity: 1 }}
                     exit={{ opacity: 0 }}
                     transition={{ duration: 0.5, type: "tween", ease: "easeIn" }}
-                    className="text-center font-extralight text-[#dcdcdc] p-6">
+                    className="text-center font-extralight text-[#dfdfdf] p-6">
                     {text1}
                 </motion.p>}
             {showText2 &&

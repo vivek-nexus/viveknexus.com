@@ -6,10 +6,10 @@ import { motion } from "motion/react"
 
 export function Design() {
     return (
-        <section>
+        <section className="max-w-[1024px] mx-auto mb-48 px-4">
             <DesignValues />
             <motion.div
-                className="mx-4 md:mx-16 mb-24 flex flex-col gap-8"
+                className="flex flex-col gap-8"
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 transition={{ duration: 0.5, type: "tween", ease: "easeIn" }}

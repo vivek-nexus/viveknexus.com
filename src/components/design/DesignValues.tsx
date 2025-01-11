@@ -5,7 +5,7 @@ import { motion } from "motion/react"
 export function DesignValues() {
     return (
         <motion.div
-            className="mx-4 mb-16 md:mb-36 flex flex-col-reverse lg:flex-col gap-4 md:gap-8 lg:gap-16"
+            className="mb-16 md:mb-36 flex flex-col-reverse lg:flex-col gap-4 md:gap-8 lg:gap-16"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 0.5, type: "tween", ease: "easeIn" }}

@@ -1,5 +1,5 @@
 import { motion } from "motion/react"
-import { useEffect, useState } from "react"
+import { useEffect, useRef, useState } from "react"
 import { LeftBrain } from "./LeftBrain"
 import { RightBrain } from "./RightBrain"
 import { BackgroundLines } from "../ui/background-lines"
@@ -29,17 +29,20 @@ export function Hero() {
     const [timeStamp, setTimeStamp] = useState(Date.now())
     const [isLandscape, setIsLandscape] = useState(true)
     const [scale, setScale] = useState(1)
+    const heroGraphic = useRef<HTMLDivElement>(null)
 
     function handleResize() {
-        // Landscape orientation
-        if (document.documentElement.clientWidth > document.documentElement.clientHeight) {
-            setIsLandscape(true)
-            setScale(document.documentElement.clientWidth / landscapeGraphicWidth)
-        }
-        // Potrait orientations
-        else {
-            setIsLandscape(false)
-            setScale(document.documentElement.clientWidth / portraitGraphicWidth)
+        if (heroGraphic.current) {
+            // Landscape orientation
+            if (document.documentElement.clientWidth > document.documentElement.clientHeight) {
+                setIsLandscape(true)
+                setScale(heroGraphic.current?.clientWidth / landscapeGraphicWidth)
+            }
+            // Potrait orientations
+            else {
+                setIsLandscape(false)
+                setScale(heroGraphic.current?.clientWidth / portraitGraphicWidth)
+            }
         }
     }
 
@@ -51,7 +54,8 @@ export function Hero() {
 
     return (
         <motion.section
-            className="mt-16 md:mt-24 mb-24 md:mb-48 overflow-x-clip flex flex-col items-center"
+            ref={heroGraphic}
+            className="max-w-[1440px] mx-auto mt-16 md:mt-24 mb-24 md:mb-48 overflow-x-clip flex flex-col items-center"
             initial={{ opacity: 0 }}
             animate={{
                 opacity: 100,
@@ -191,7 +195,7 @@ export function Hero() {
                             <LeftBrain />
                         </motion.div>
                         <motion.h2
-                            className="text-[#dcdcdc] text-right text-[64px] absolute right-8 top-1/2"
+                            className="text-[#dfdfdf] text-right text-[64px] absolute right-8 top-1/2"
                             initial={{ x: -780, y: "-50%", opacity: 0 }}
                             animate={animationName}
                             variants={{
@@ -236,7 +240,7 @@ export function Hero() {
                             <RightBrain />
                         </motion.div>
                         <motion.h2
-                            className="text-[#dcdcdc] text-left text-[64px] absolute left-8 top-1/2"
+                            className="text-[#dfdfdf] text-left text-[64px] absolute left-8 top-1/2"
                             initial={{ x: 780, y: "-50%", opacity: 0 }}
                             animate={animationName}
                             variants={{
@@ -278,7 +282,7 @@ export function Hero() {
             >
                 {/* Increased dimensions to prevent text being unreadable in mobile */}
                 <img src="/icons/briefcase-icon.svg" alt="Briefcase icon" className={`${isLandscape ? `h-auto` : `h-8`}`} />
-                <p className={`text-[#dcdcdc] text-center ${isLandscape ? `text-2xl` : `text-4xl`} font-extralight whitespace-nowrap`}>
+                <p className={`text-[#dfdfdf] text-center ${isLandscape ? `text-2xl` : `text-4xl`} font-extralight whitespace-nowrap`}>
                     Senior Product Designer at BrowserStack
                 </p>
             </motion.div>

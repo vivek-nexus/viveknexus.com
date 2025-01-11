@@ -20,7 +20,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${suse.className} antialiased bg-black text-[#C0C0C0] max-w-[1280px] mx-auto`}
+        className={`${suse.className} antialiased bg-black text-[#C0C0C0]`}
       >
         {children}
       </body>
