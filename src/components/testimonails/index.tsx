@@ -1,5 +1,5 @@
 import { testimonials } from "@/constants/testimonials"
-import { TestimonialCard } from "../about/TestimonialCard"
+import { TestimonialCard } from "./TestimonialCard"
 import Confetti from 'react-confetti'
 
 export function Testimonials() {
