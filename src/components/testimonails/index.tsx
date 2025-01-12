@@ -16,7 +16,7 @@ export function Testimonials() {
                 <TestimonialCard
                     items={testimonials}
                     direction="left"
-                    speed="normal"
+                    speed="fast"
                     className="py-48"
                 />
             </div>

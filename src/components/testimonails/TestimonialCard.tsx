@@ -93,11 +93,11 @@ export const TestimonialCard = ({
             >
                 {items.map((item) => (
                     <li
-                        className="w-[100vw] md:w-[40vw] h-fit relative border border-white/25 bg-gradient-to-t from-[#b16ac2]/25 to-[#000000] text-[#c0c0c0] rounded-xl flex-shrink-0 p-9 shadow-whiteGlow1 bg-center bg-cover"
+                        className="w-[80vw] md:w-[40vw] h-fit relative border border-white/25 bg-gradient-to-t from-[#b16ac2]/25 to-[#000000] text-[#c0c0c0] rounded-xl flex-shrink-0 p-9 shadow-whiteGlow1 bg-center bg-cover"
                         key={item.name}
                     >
                         <p
-                            className={`${lora.className} absolute right-6 -top-[52px] -scale-x-100 -scale-y-100 text-5xl md:text-7xl italic -mb-4 text-[#ff9326]`}
+                            className={`${lora.className} absolute right-6 -top-[36px] md:-top-[52px] -scale-x-100 -scale-y-100 text-5xl md:text-7xl italic -mb-4 text-[#ff9326]`}
                         >
                             “
                         </p>
