@@ -46,7 +46,7 @@ export function DesignProjectCard(
                 }
             `}</style>
             <div
-                className="w-full rounded-2xl p-6 md:p-12 grid grid-cols-2 gap-9 border-2 border-white/25 shadow-whiteGlow1 design-project-card"
+                className="w-full rounded-2xl p-6 md:p-12 grid grid-cols-2 gap-9 border-2 border-white/25 design-project-card"
             >
                 <div
                     className="col-span-2 lg:col-span-1 order-2 lg:order-1">
@@ -67,13 +67,13 @@ export function DesignProjectCard(
                     <a
                         href={hyperLink}
                         target="_blank"
-                        className="w-fit px-4 py-2 mb-1 md:mb-0 rounded-lg text-white font-medium flex gap-1 items-center"
+                        className="w-fit px-4 py-2 mb-1 md:mb-0 rounded-lg text-white font-medium flex gap-1 items-center group"
                         style={{
                             backgroundImage: `linear-gradient(180deg,#${gradientColourHex} 0%, #${gradientColourHex + buttonGradientEndOpacity} 100% )`
                         }}
                     >
                         {linkText}
-                        <img src="/icons/north-east-arrow.svg" className="h-4" />
+                        <img src="/icons/north-east-arrow.svg" className="h-4 group-hover:translate-x-1 group-hover:-translate-y-1 duration-300 ease-in-out" />
                     </a>
                 </div>
                 <div className={`col-span-2 aspect-square lg:aspect-auto max-h-64 lg:max-h-full lg:col-span-1 order-1 lg:order-2 flex justify-start lg:justify-end bg-no-repeat bg-contain bg-center lg:bg-right`}

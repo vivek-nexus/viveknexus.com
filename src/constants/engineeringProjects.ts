@@ -34,7 +34,7 @@ export const engineeringProjects = [
         repoLink: "https://github.com/vivek-nexus/listen",
         stats: [
             {
-                name: "Users",
+                name: "Hits",
                 value: "100+/day",
                 iconURI: "user.svg"
             },
@@ -49,7 +49,7 @@ export const engineeringProjects = [
     },
     {
         title: "Figma plugins",
-        description: "Variables ⇔ CSV import export \n Variables inspector",
+        description: `Variables ⇔ CSV import export and Variables inspector`,
         repoLink: "https://github.com/vivek-nexus?tab=repositories&q=figma",
         stats: [
             {

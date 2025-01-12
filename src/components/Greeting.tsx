@@ -3,7 +3,7 @@ import { motion } from "motion/react"
 export function Greeting({ userIp }: { userIp: string }) {
     return (
         <motion.section
-            className="w-full h-dvh text-center bg-background-grid bg-cover bg-center bg-no-repeat flex flex-col justify-center items-center"
+            className="mx-4 w-full h-dvh text-center bg-background-grid bg-cover bg-center bg-no-repeat flex flex-col justify-center items-center"
             initial={{ opacity: 0 }}
             animate={{
                 opacity: 100,

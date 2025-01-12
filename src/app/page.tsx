@@ -7,6 +7,7 @@ import { Hero } from "@/components/hero"
 import { Design } from "@/components/design"
 import { Contact } from "@/components/Contact"
 import { Engineering } from "@/components/engineering"
+import { About } from "@/components/About"
 
 export default function Home() {
   const [showGreeting, setShowGreeting] = useState(false)
@@ -57,6 +58,7 @@ export default function Home() {
         <>
           <Design />
           <Engineering />
+          <About />
           <Contact />
         </>
       }
