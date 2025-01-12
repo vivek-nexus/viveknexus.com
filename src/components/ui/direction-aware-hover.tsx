@@ -73,7 +73,7 @@ export const DirectionAwareHover = ({
     return (
         <motion.div
             className={cn(
-                "md:h-full w-full h-full md:w-full bg-transparent rounded-lg overflow-hidden relative",
+                "md:h-full w-full h-full md:w-full bg-transparent rounded-lg overflow-hidden relative focus-within:outline",
                 className
             )}
         >
@@ -116,7 +116,7 @@ export const DirectionAwareHover = ({
                             ease: "easeOut",
                         }}
                         className={cn(
-                            "text-white absolute bottom-4 left-4 z-40",
+                            "text-[#dfdfdf] absolute bottom-4 left-4 z-40",
                             childrenClassName
                         )}
                     >

@@ -3,10 +3,10 @@ export function Contact() {
         <>
             <section
                 id="contact"
-                className="px-4 pt-24 pb-4 opacity-75 text-white text-center"
+                className="animated-mesh-gradient px-4 pt-24 pb-4 text-[#c0c0c0] text-center"
             >
                 <h2 className="text-5xl md:text-7xl font-extralight mb-12">What say?</h2>
-                <div className="mb-12 flex gap-4 md:gap-8 justify-center items-center">
+                <div className="mb-12 flex gap-4 md:gap-8 justify-center items-center opacity-75">
                     <a href="mailto:in.vivek.g@gmail.com">
                         <img src="/icons/email.svg" className="h-12 md:h-16" />
                     </a>

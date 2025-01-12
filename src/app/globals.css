@@ -13,6 +13,9 @@ html {
     color: transparent;
 }
 
+
+
+/* ANIMATED MESH GRADIENT */
 @keyframes contact-animation {
     0% {
         --c-0: hsla(216.63716814159295, 91%, 24%, 1);
@@ -181,7 +184,7 @@ html {
     initial-value: 86%
 }
 
-#contact {
+.animated-mesh-gradient {
     --c-0: hsla(216.63716814159295, 91%, 24%, 1);
     --x-0: 34%;
     --y-0: 50%;

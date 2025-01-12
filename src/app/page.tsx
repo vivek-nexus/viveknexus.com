@@ -7,7 +7,8 @@ import { Hero } from "@/components/hero"
 import { Design } from "@/components/design"
 import { Contact } from "@/components/Contact"
 import { Engineering } from "@/components/engineering"
-import { About } from "@/components/About"
+import { About } from "@/components/about"
+import { Testimonials } from "@/components/testimonails"
 
 export default function Home() {
   const [showGreeting, setShowGreeting] = useState(false)
@@ -41,10 +42,18 @@ export default function Home() {
       setShowPage(true)
     }, 7500)
 
+    const scrollToAnchorTimeout = setTimeout(() => {
+      const hash = window.location.hash
+      if (hash) {
+        document.querySelector(hash)?.scrollIntoView()
+      }
+    }, 7700)
+
     return (() => {
       clearTimeout(hideGreetingTimeout)
       clearTimeout(showHeroTimeout)
       clearTimeout(showPageTimeout)
+      clearTimeout(scrollToAnchorTimeout)
     })
   }, [])
 
@@ -59,6 +68,7 @@ export default function Home() {
           <Design />
           <Engineering />
           <About />
+          <Testimonials />
           <Contact />
         </>
       }

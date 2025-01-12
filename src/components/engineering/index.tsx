@@ -11,22 +11,18 @@ const spaceMono = Space_Mono({
 
 export function Engineering() {
     return (
-        <section id="engineering" className={`relative ${spaceMono.className}`}>
+        <section
+            id="engineering"
+            className={`relative ${spaceMono.className} [mask-image:linear-gradient(to_bottom,transparent,white_20%,white_80%,transparent)]`}
+        >
             <ShootingStars
-                minDelay={1500}
-                maxDelay={5000}
+                minDelay={500}
+                maxDelay={2500}
             />
             <StarsBackground
                 twinkleProbability={1}
                 starDensity={0.00055}
             />
-            <div
-                className="absolute top-0 left-0 gradient-to-b w-full h-full"
-                style={{
-                    backgroundImage: "linear-gradient(180deg, black 0%, transparent 20%, transparent 90%, black 100%)"
-                }}
-            >
-            </div>
             <div className="max-w-[1024px] mx-auto px-4 pt-48 pb-48">
                 <h2 className="text-5xl md:text-7xl text-center font-extralight mb-12">Engineering</h2>
                 <div className="grid grid-cols-2 gap-12">

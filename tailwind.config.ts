@@ -13,11 +13,22 @@ export default {
         foreground: "var(--foreground)",
       },
       backgroundImage: {
-        "background-grid": "url('/images/background-grid.svg')"
+        "backgroundGrid": "url('/images/background-grid.svg')"
       },
       boxShadow: {
-        whiteGlow1: "0px 4px 18px rgba(255, 255, 255, 0.25)"
-      }
+        whiteGlow1: "0px 0px 24px 4px rgba(255, 255, 255, 0.12) inset"
+      },
+      animation: {
+        scroll:
+          "scroll var(--animation-duration, 40s) var(--animation-direction, forwards) linear infinite",
+      },
+      keyframes: {
+        scroll: {
+          to: {
+            transform: "translate(calc(-50% - 0.5rem))",
+          },
+        },
+      },
     },
   },
   plugins: [],

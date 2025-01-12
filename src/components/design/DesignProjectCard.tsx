@@ -76,7 +76,7 @@ export function DesignProjectCard(
                         <img src="/icons/north-east-arrow.svg" className="h-4 group-hover:translate-x-1 group-hover:-translate-y-1 duration-300 ease-in-out" />
                     </a>
                 </div>
-                <div className={`col-span-2 aspect-square lg:aspect-auto max-h-64 lg:max-h-full lg:col-span-1 order-1 lg:order-2 flex justify-start lg:justify-end bg-no-repeat bg-contain bg-center lg:bg-right`}
+                <div className={`col-span-2 aspect-square lg:aspect-auto max-h-48 lg:max-h-full lg:col-span-1 order-1 lg:order-2 flex justify-start lg:justify-end bg-no-repeat bg-contain bg-center lg:bg-right`}
                     style={{
                         backgroundImage: `url("${imageURI}")`
                     }}
