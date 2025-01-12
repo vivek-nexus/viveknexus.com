@@ -18,17 +18,6 @@ export function NavItem({ alphabet }: { alphabet: Alphabet }) {
         return modifierKeys.some((key) => keyboardEvent.getModifierState(key))
     }
 
-    function handleNavigation(alphabet: Alphabet) {
-        if (alphabet === "R") {
-            window.open(navDetails[alphabet].URI, "_blank")
-        }
-        else if (alphabet === "V") {
-            window.scrollTo(0, 0)
-        }
-        else {
-            router.push(navDetails[alphabet].URI)
-        }
-    }
 
     useEffect(() => {
         function handleKeyPress(event: KeyboardEvent) {
@@ -36,7 +25,15 @@ export function NavItem({ alphabet }: { alphabet: Alphabet }) {
             // if (!isModifierKeyPressed(event)) {
             const key = event.key.toUpperCase() as Alphabet
             if (key.toLocaleUpperCase() === alphabet) {
-                handleNavigation(key)
+                if (alphabet === "R") {
+                    window.open(navDetails[alphabet].URI, "_blank")
+                }
+                else if (alphabet === "V") {
+                    window.scrollTo(0, 0)
+                }
+                else {
+                    router.push(navDetails[alphabet].URI)
+                }
             }
         }
 
@@ -50,10 +47,10 @@ export function NavItem({ alphabet }: { alphabet: Alphabet }) {
     return (
         <li>
             <a href={navDetails[alphabet].URI} target={alphabet === "R" ? "_blank" : undefined}
-                className="w-20 h-20 flex flex-col gap-1 justify-center items-center"
+                className="w-14 md:w-20 h-14 md:h-20 flex flex-col gap-1 justify-center items-center"
             >
                 <span className={`border border-[#c0c0c0] w-5 h-5 rounded text-xs font-bold ${spaceMono.className} flex justify-center items-center`}>{alphabet.toLocaleUpperCase()}</span>
-                <span>{navDetails[alphabet].text}</span>
+                <span className="hidden md:block">{navDetails[alphabet].text}</span>
             </a>
         </li>
     )

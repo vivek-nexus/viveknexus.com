@@ -6,7 +6,7 @@ import { NavItem } from "./NavItem"
 export function Nav() {
     return (
         <motion.nav
-            className="fixed z-50 top-0 left-1/2 -translate-x-1/2 mx-auto bg-black/50 border-b border-l border-r border-[#c0c0c0]/50 backdrop-blur-md rounded-b-2xl"
+            className="fixed w-fit z-50 top-0 left-1/2 -translate-x-1/2 mx-auto bg-black/50 border-b border-l border-r border-[#c0c0c0]/50 backdrop-blur-md rounded-b-2xl"
             initial={{ opacity: 0 }}
             animate={"secondAnimation"}
             variants={{
@@ -16,7 +16,7 @@ export function Nav() {
                 },
             }}
         >
-            <ul className="hidden md:flex">
+            <ul className="flex">
                 <NavItem alphabet="V" />
                 <NavItem alphabet="D" />
                 <NavItem alphabet="E" />

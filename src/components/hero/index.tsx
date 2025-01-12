@@ -55,7 +55,7 @@ export function Hero() {
     return (
         <motion.section
             ref={heroGraphic}
-            className="max-w-[1440px] mx-auto mt-16 md:mt-24 mb-24 md:mb-48 overflow-x-clip flex flex-col items-center"
+            className="max-w-[1440px] mx-auto mt-16 md:mt-24 pb-12 md:pb-24 overflow-x-clip flex flex-col items-center"
             initial={{ opacity: 0 }}
             animate={{
                 opacity: 100,
