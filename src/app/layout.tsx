@@ -20,7 +20,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <Script>{`
+      <Script id="mouseflow-script">{`
         window._mfq = window._mfq || [];
         (function() {
           var mf = document.createElement("script");
