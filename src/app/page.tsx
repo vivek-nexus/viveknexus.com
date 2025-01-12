@@ -9,6 +9,7 @@ import { Contact } from "@/components/Contact"
 import { Engineering } from "@/components/engineering"
 import { About } from "@/components/about"
 import { Testimonials } from "@/components/testimonails"
+import { Nav } from "@/components/nav"
 
 export default function Home() {
   const [showGreeting, setShowGreeting] = useState(false)
@@ -58,20 +59,23 @@ export default function Home() {
   }, [])
 
   return (
-    <main>
-      <AnimatePresence>
-        {showGreeting && <Greeting userIp={userIp} />}
-      </AnimatePresence>
-      {showHero && <Hero />}
-      {showPage &&
-        <>
-          <Design />
-          <Engineering />
-          <About />
-          <Testimonials />
-          <Contact />
-        </>
-      }
-    </main>
+    <>
+      <Nav />
+      <main>
+        <AnimatePresence>
+          {showGreeting && <Greeting userIp={userIp} />}
+        </AnimatePresence>
+        {showHero && <Hero />}
+        {showPage &&
+          <>
+            <Design />
+            <Engineering />
+            <About />
+            <Testimonials />
+            <Contact />
+          </>
+        }
+      </main>
+    </>
   )
 }
