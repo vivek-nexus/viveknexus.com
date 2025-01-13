@@ -10,6 +10,8 @@ import { Engineering } from "@/components/engineering"
 import { About } from "@/components/about"
 import { Testimonials } from "@/components/testimonails"
 import { Nav } from "@/components/nav"
+import { EasterEggProvider } from "@/context/EasterEggContext"
+import { TooltipInvokedProvider } from "@/context/TooltipInvokedContext"
 
 export default function Home() {
   const [showGreeting, setShowGreeting] = useState(false)
@@ -59,23 +61,25 @@ export default function Home() {
   }, [])
 
   return (
-    <>
-      <Nav />
-      <main>
-        <AnimatePresence>
-          {showGreeting && <Greeting userIp={userIp} />}
-        </AnimatePresence>
-        {showHero && <Hero />}
-        {showPage &&
-          <>
-            <Design />
-            <Engineering />
-            <About />
-            <Testimonials />
-            <Contact />
-          </>
-        }
-      </main>
-    </>
+    <EasterEggProvider>
+      <TooltipInvokedProvider>
+        <Nav />
+        <main>
+          <AnimatePresence>
+            {showGreeting && <Greeting userIp={userIp} />}
+          </AnimatePresence>
+          {showHero && <Hero />}
+          {showPage &&
+            <>
+              <Design />
+              <Engineering />
+              <About />
+              <Testimonials />
+              <Contact />
+            </>
+          }
+        </main>
+      </TooltipInvokedProvider>
+    </EasterEggProvider>
   )
 }

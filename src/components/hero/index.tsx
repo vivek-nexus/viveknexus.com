@@ -3,6 +3,7 @@ import { useEffect, useRef, useState } from "react"
 import { LeftBrain } from "./LeftBrain"
 import { RightBrain } from "./RightBrain"
 import { BackgroundLines } from "../ui/background-lines"
+import { useEasterEgg } from "@/context/EasterEggContext"
 
 
 const transitionTween = {
@@ -30,6 +31,9 @@ export function Hero() {
     const [isLandscape, setIsLandscape] = useState(true)
     const [scale, setScale] = useState(1)
     const heroGraphic = useRef<HTMLDivElement>(null)
+
+    const { setShowEasterEggMessage } = useEasterEgg()
+
 
     function handleResize() {
         if (heroGraphic.current) {
@@ -190,6 +194,7 @@ export function Hero() {
                             onClick={() => {
                                 setTimeStamp(Date.now())
                                 setAnimationName("firstAnimation")
+                                setShowEasterEggMessage(true)
                             }}
                         >
                             <LeftBrain />
@@ -235,6 +240,7 @@ export function Hero() {
                             onClick={() => {
                                 setTimeStamp(Date.now())
                                 setAnimationName("firstAnimation")
+                                setShowEasterEggMessage(true)
                             }}
                         >
                             <RightBrain />

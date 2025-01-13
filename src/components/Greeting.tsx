@@ -30,7 +30,7 @@ export function Greeting({ userIp }: { userIp: string }) {
             <p className="mb-4 text-sm md:text-2xl">
                 Hello human at&nbsp;
                 <TooltipProvider>
-                    <Tooltip>
+                    <Tooltip delayDuration={100}>
                         <TooltipTrigger asChild>
                             <button className="font-bold bg-gradient-to-r from-[#2ed1a0] to-[#0e5edf] text-gradient">{userIp}!</button>
                         </TooltipTrigger>

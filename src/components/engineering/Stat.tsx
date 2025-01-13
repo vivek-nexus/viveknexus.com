@@ -10,7 +10,8 @@ export function Stat({ index, name, value, iconURI }: StatProps & { index: numbe
                 <p>{value}</p>
                 <img
                     src={`/icons/${iconURI}`}
-                    className={`h-4 ${iconURI !== "user.svg" ? `mb-1` : `mb-0`}`}
+                    alt={`Icon ${iconURI.split('.')[0]}`}
+                    className="h-4 mb-1"
                 />
             </div>
         </div>

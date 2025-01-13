@@ -4,16 +4,11 @@ import {
     TooltipProvider,
     TooltipTrigger,
 } from "@/components/ui/tooltip"
-import { randomThoughts } from "@/constants/randomThougts"
-import { useState } from "react"
+import { RandomThought } from "./RandomThought"
 
-function generateRandomNumber(max: number) {
-    return Math.floor(Math.random() * max)
-}
+
 
 export function AboutText({ number }: { number: number }) {
-    const [randomThoughtNumber, setRandomThoughtNumber] = useState(generateRandomNumber(randomThoughts.length))
-
     return (
         <p>
             {(number === 1) && `Two core aspects of my professional life — design and frontend — I learnt them outside the formal education framework! Most skills are ultimately a combination of experience and persistence, yeah? Purpose and process are both important, but if given a choice, I might show a healthy disrespect for the process.`}
@@ -21,28 +16,18 @@ export function AboutText({ number }: { number: number }) {
             {(number === 3) &&
                 <>
                     Whenever I day dream, my brain has this weird habit of zooming out and finding similarities between seemingly unrelated things of life.
-                    <span className="hidden md:inline"> A random&nbsp;
+                    <span className="hidden md:inline"> A&nbsp;
                         <TooltipProvider>
-                            <Tooltip>
+                            <Tooltip delayDuration={100}>
                                 <TooltipTrigger asChild>
                                     <button
                                         className="font-bold bg-gradient-to-r from-[#2ed1a0] to-[#0e5edf] text-gradient"
-                                        onMouseOver={() => {
-                                            setRandomThoughtNumber(generateRandomNumber(randomThoughts.length))
-                                        }}
-                                        onFocus={() => {
-                                            setRandomThoughtNumber(generateRandomNumber(randomThoughts.length))
-                                        }}
                                     >
-                                        example.
+                                        set of examples.
                                     </button>
                                 </TooltipTrigger>
                                 <TooltipContent>
-                                    <p
-                                        className="max-w-[25vw] leading-normal"
-                                    >
-                                        {randomThoughts[randomThoughtNumber]}
-                                    </p>
+                                    <RandomThought />
                                 </TooltipContent>
                             </Tooltip>
                         </TooltipProvider>

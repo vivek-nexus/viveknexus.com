@@ -28,20 +28,20 @@ export function EngineeringProjectCard(
     }: EngineeringProjectCardProps
 ) {
     return (
-        <div className={`relative overflow-clip ${index === 0 ? `col-span-2` : `col-span-2 md:col-span-1`} p-6 md:p-9`}
+        <div className={`relative ${index === 0 ? `col-span-2` : `col-span-2 md:col-span-1`} p-6 md:p-9`}
             style={{
                 // https://kovart.github.io/dashed-border-generator/
                 backgroundImage: `url("data:image/svg+xml,%3csvg width='100%25' height='100%25' xmlns='http://www.w3.org/2000/svg'%3e%3crect width='100%25' height='100%25' fill='none' stroke='%23666666FF' stroke-width='4' stroke-dasharray='6%2c12' stroke-dashoffset='0' stroke-linecap='square'/%3e%3c/svg%3e")`
             }}
         >
-            <img src="/icons/plus.svg" className="absolute -top-[12.5px] -left-[12.5px]" />
-            <img src="/icons/plus.svg" className="absolute -top-[12.5px] -right-[12.5px]" />
-            <img src="/icons/plus.svg" className="absolute -bottom-[12.5px] -left-[12.5px]" />
-            <img src="/icons/plus.svg" className="absolute -bottom-[12.5px] -right-[12.5px]" />
+            <img src="/icons/plus.svg" alt="" className="absolute -top-[12.5px] -left-[12.5px]" />
+            <img src="/icons/plus.svg" alt="" className="absolute -top-[12.5px] -right-[12.5px]" />
+            <img src="/icons/plus.svg" alt="" className="absolute -bottom-[12.5px] -left-[12.5px]" />
+            <img src="/icons/plus.svg" alt="" className="absolute -bottom-[12.5px] -right-[12.5px]" />
             <div className="flex justify-between items-center mb-4">
                 <p className="text-2xl md:text-4xl">{title}</p>
                 <a href={repoLink} target="_blank">
-                    <img src="/icons/github.svg" className="h-8 md:h-12 opacity-75" />
+                    <img src="/icons/github.svg" alt="GitHub icon" className="h-8 md:h-12 opacity-75" />
                 </a>
             </div>
             <hr className="border-[#666666] mb-4" />
@@ -67,7 +67,7 @@ export function EngineeringProjectCard(
                 className="w-fit p-4 border border-[#DFDFDF] flex gap-1 items-center group"
             >
                 {linkText}
-                <img src="/icons/north-east-arrow.svg" className="h-4 group-hover:translate-x-1 group-hover:-translate-y-1 duration-300 ease-in-out" />
+                <img src="/icons/north-east-arrow.svg" alt="North east arrow icon indicating that the link opens in a new tab" className="h-4 group-hover:translate-x-1 group-hover:-translate-y-1 duration-300 ease-in-out" />
             </a>
         </div>
     )

@@ -38,7 +38,7 @@ export function About() {
                         <AboutText number={2} />
                     </div>
                     <div className="col-span-3 md:col-span-1 h-64 rounded-2xl border border-white/25 hover:shadow-whiteGlow1 duration-200 ease-in bg-gradient-to-b from-[#1e8b6b] to-[#0c4198] flex justify-center items-center">
-                        <img src="/images/face-caricature.svg" />
+                        <img src="/images/face-caricature.svg" alt="Caricature of my face" />
                     </div>
                     <div className="col-span-3 md:col-span-1 h-64 rounded-2xl border border-white/25 hover:shadow-whiteGlow1 duration-200 ease-in p-8 flex items-center bg-gradient-to-b from-[#007A56]/25 to-[#073174]/25">
                         <AboutText number={3} />
