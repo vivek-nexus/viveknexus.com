@@ -1,4 +1,3 @@
-import { modifierKeys } from "@/constants/modifierKeys"
 import { navDetails } from "@/constants/navDetails"
 import { Space_Mono } from "next/font/google"
 import { useRouter } from "next/navigation"
@@ -15,24 +14,25 @@ export function NavItem({ alphabet }: { alphabet: Alphabet }) {
     const router = useRouter()
 
     function isModifierKeyPressed(keyboardEvent: KeyboardEvent) {
-        return modifierKeys.some((key) => keyboardEvent.getModifierState(key))
+        return (keyboardEvent.altKey || keyboardEvent.ctrlKey || keyboardEvent.metaKey || keyboardEvent.shiftKey)
     }
 
 
     useEffect(() => {
         function handleKeyPress(event: KeyboardEvent) {
             console.log(isModifierKeyPressed(event))
-            // if (!isModifierKeyPressed(event)) {
-            const key = event.key.toUpperCase() as Alphabet
-            if (key.toLocaleUpperCase() === alphabet) {
-                if (alphabet === "R") {
-                    window.open(navDetails[alphabet].URI, "_blank")
-                }
-                else if (alphabet === "V") {
-                    window.scrollTo(0, 0)
-                }
-                else {
-                    router.push(navDetails[alphabet].URI)
+            if (!isModifierKeyPressed(event)) {
+                const key = event.key.toUpperCase() as Alphabet
+                if (key.toLocaleUpperCase() === alphabet) {
+                    if (alphabet === "R") {
+                        window.open(navDetails[alphabet].URI, "_blank")
+                    }
+                    else if (alphabet === "V") {
+                        window.scrollTo(0, 0)
+                    }
+                    else {
+                        router.push(navDetails[alphabet].URI)
+                    }
                 }
             }
         }
