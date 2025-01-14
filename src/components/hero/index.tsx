@@ -6,7 +6,7 @@ import { BackgroundLines } from "../ui/background-lines"
 import { useEasterEgg } from "@/context/EasterEggContext"
 
 
-const transitionTween = {
+export const transitionTween = {
     type: "tween",
     ease: [0.48, 0.01, 0.4, 1.4],
     duration: 2,

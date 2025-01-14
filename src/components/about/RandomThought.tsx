@@ -1,8 +1,8 @@
 import { randomThoughts } from "@/constants/randomThougts"
-import { useTooltipInvoked } from "@/context/TooltipInvokedContext"
+import { useEasterEgg } from "@/context/EasterEggContext"
 
 export function RandomThought() {
-    const { tooltipInvokedCount } = useTooltipInvoked()
+    const { tooltipInvokedCount } = useEasterEgg()
     return (
         <p className="max-w-[25vw] leading-normal" >
             {randomThoughts[(tooltipInvokedCount % 4)]}

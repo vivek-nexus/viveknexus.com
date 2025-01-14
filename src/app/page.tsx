@@ -11,7 +11,6 @@ import { About } from "@/components/about"
 import { Testimonials } from "@/components/testimonails"
 import { Nav } from "@/components/nav"
 import { EasterEggProvider } from "@/context/EasterEggContext"
-import { TooltipInvokedProvider } from "@/context/TooltipInvokedContext"
 
 export default function Home() {
   const [showGreeting, setShowGreeting] = useState(false)
@@ -19,38 +18,43 @@ export default function Home() {
   const [showPage, setShowPage] = useState(false)
   const [userIp, setUserIp] = useState("<getting your ip address>")
 
+  let hideGreetingTimeout: NodeJS.Timeout
+  let showHeroTimeout: NodeJS.Timeout
+  let showPageTimeout: NodeJS.Timeout
+  let scrollToAnchorTimeout: NodeJS.Timeout
+
   useEffect(() => {
-    try {
-      fetch("https://render-express-server-q222.onrender.com/ip").then((response) => {
-        response.text().then((text) => {
-          setUserIp(text)
-          setShowGreeting(true)
-        })
+    fetch("https://render-express-server-q222.onrender.com/ip")
+      .then((response) => {
+        response.text()
+          .then((text) => {
+            setUserIp(text)
+            setShowGreeting(true)
+          })
       })
-      setShowGreeting(true)
-    } catch (error) {
-      console.error(error)
-      setShowGreeting(true)
-    }
+      .catch((err) => {
+        console.error(err)
+      })
+      .finally(() => {
+        hideGreetingTimeout = setTimeout(() => {
+          setShowGreeting(false)
+        }, 3500)
 
-    const hideGreetingTimeout = setTimeout(() => {
-      setShowGreeting(false)
-    }, 3500)
+        showHeroTimeout = setTimeout(() => {
+          setShowHero(true)
+        }, 4550)
 
-    const showHeroTimeout = setTimeout(() => {
-      setShowHero(true)
-    }, 4550)
+        showPageTimeout = setTimeout(() => {
+          setShowPage(true)
+        }, 7500)
 
-    const showPageTimeout = setTimeout(() => {
-      setShowPage(true)
-    }, 7500)
-
-    const scrollToAnchorTimeout = setTimeout(() => {
-      const hash = window.location.hash
-      if (hash) {
-        document.querySelector(hash)?.scrollIntoView()
-      }
-    }, 7700)
+        scrollToAnchorTimeout = setTimeout(() => {
+          const hash = window.location.hash
+          if (hash) {
+            document.querySelector(hash)?.scrollIntoView()
+          }
+        }, 7700)
+      })
 
     return (() => {
       clearTimeout(hideGreetingTimeout)
@@ -62,42 +66,40 @@ export default function Home() {
 
   return (
     <EasterEggProvider>
-      <TooltipInvokedProvider>
-        <div className="p-2 fixed left-0 top-0 focus-within:z-50 -translate-x-[1000px] focus-within:translate-x-0">
-          <button
-            className="mr-2 p-2 bg-black1 rounded-md border border-white2/50"
-            onClick={() => {
-              document.querySelector<HTMLElement>(".design-value-card")?.focus()
-            }}
-          >
-            Skip to main content {!showPage && `(Main content available after opening animations)`}
-          </button>
-          <button
-            className="mr-2 p-2 bg-black1 rounded-md border border-white2/50"
-            onClick={() => {
-              document.querySelector<HTMLElement>("nav a")?.focus()
-            }}
-          >
-            Skip to navigation {!showPage && `(Navigation available after opening animations)`}
-          </button>
-        </div>
-        <Nav />
-        <main>
-          <AnimatePresence>
-            {showGreeting && <Greeting userIp={userIp} />}
-          </AnimatePresence>
-          {showHero && <Hero />}
-          {showPage &&
-            <>
-              <Design />
-              <Engineering />
-              <About />
-              <Testimonials />
-              <Contact />
-            </>
-          }
-        </main>
-      </TooltipInvokedProvider>
+      <div className="p-2 fixed left-0 top-0 focus-within:z-50 -translate-x-[1000px] focus-within:translate-x-0">
+        <button
+          className="mr-2 p-2 bg-black1 rounded-md border border-white2/50"
+          onClick={() => {
+            document.querySelector<HTMLElement>(".design-value-card")?.focus()
+          }}
+        >
+          Skip to main content {!showPage && `(Main content available after opening animations)`}
+        </button>
+        <button
+          className="mr-2 p-2 bg-black1 rounded-md border border-white2/50"
+          onClick={() => {
+            document.querySelector<HTMLElement>("nav a")?.focus()
+          }}
+        >
+          Skip to navigation {!showPage && `(Navigation available after opening animations)`}
+        </button>
+      </div>
+      {showHero && <Nav />}
+      <main>
+        <AnimatePresence>
+          {showGreeting && <Greeting userIp={userIp} />}
+        </AnimatePresence>
+        {showHero && <Hero />}
+        {showPage &&
+          <>
+            <Design />
+            <Engineering />
+            <About />
+            <Testimonials />
+            <Contact />
+          </>
+        }
+      </main>
     </EasterEggProvider>
   )
 }

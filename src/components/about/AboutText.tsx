@@ -5,14 +5,14 @@ import {
     TooltipTrigger,
 } from "@/components/ui/tooltip"
 import { RandomThought } from "./RandomThought"
-import { useTooltipInvoked } from "@/context/TooltipInvokedContext"
 import { useState } from "react"
+import { useEasterEgg } from "@/context/EasterEggContext"
 
 
 
 export function AboutText({ number }: { number: number }) {
     const [isTooltipOpen, setIsTooltipOpen] = useState(false)
-    const { setTooltipInvokedCount } = useTooltipInvoked()
+    const { setTooltipInvokedCount } = useEasterEgg()
 
     return (
         <p>

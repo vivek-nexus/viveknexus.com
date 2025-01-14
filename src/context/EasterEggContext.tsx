@@ -5,6 +5,8 @@ import React, { createContext, useState, useContext, ReactNode, Dispatch, SetSta
 interface EasterEggContextType {
     showEasterEggMessage: boolean
     setShowEasterEggMessage: Dispatch<SetStateAction<boolean>>,
+    tooltipInvokedCount: number,
+    setTooltipInvokedCount: Dispatch<SetStateAction<number>>
 }
 
 const EasterEggContext = createContext<EasterEggContextType | undefined>(undefined)
@@ -15,15 +17,16 @@ interface EasterEggProviderProps {
 
 export const EasterEggProvider: FC<EasterEggProviderProps> = ({ children }) => {
     const [showEasterEggMessage, setShowEasterEggMessage] = useState(false)
+    const [tooltipInvokedCount, setTooltipInvokedCount] = useState(0)
 
     return (
-        <EasterEggContext.Provider value={{ showEasterEggMessage, setShowEasterEggMessage }}>
+        <EasterEggContext.Provider value={{ showEasterEggMessage, setShowEasterEggMessage, tooltipInvokedCount, setTooltipInvokedCount }}>
             {children}
         </EasterEggContext.Provider>
     )
 }
 
-// Custom hook to use the context
+// Custom hook to use the EasterEggContext
 export const useEasterEgg = (): EasterEggContextType => {
     const context = useContext(EasterEggContext)
     if (!context) {

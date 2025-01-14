@@ -1,14 +1,15 @@
 import { AnimatePresence, motion } from "motion/react"
-import { transitionSpring } from "../hero"
+import { transitionSpring, transitionTween } from "../hero"
 import { NavItem } from "./NavItem"
 import { useEasterEgg } from "@/context/EasterEggContext"
-import { useEffect } from "react"
-import { useTooltipInvoked } from "@/context/TooltipInvokedContext"
+import { useEffect, useState } from "react"
 
 
 export function Nav() {
-    const { showEasterEggMessage, setShowEasterEggMessage } = useEasterEgg()
-    const { tooltipInvokedCount } = useTooltipInvoked()
+    const [animationName, setAnimationName] = useState("firstAnimation")
+    const { showEasterEggMessage, setShowEasterEggMessage, tooltipInvokedCount } = useEasterEgg()
+
+    console.log("New nav render")
 
     useEffect(() => {
         let showEasterEggMessageTimeout: NodeJS.Timeout
@@ -32,12 +33,21 @@ export function Nav() {
         <motion.nav
             className={`fixed w-fit z-50 top-0 left-1/2 -translate-x-1/2 mx-auto bg-black1/50 border-b border-l border-r border-white3 backdrop-blur-md rounded-b-2xl overflow-clip transition-all duration-500 ease-in-out ${showEasterEggMessage ? `max-h-24 md:max-h-28` : `max-h-14 md:max-h-20`}`}
             initial={{ opacity: 0 }}
-            animate={"secondAnimation"}
+            animate={animationName}
             variants={{
+                firstAnimation: {
+                    opacity: 0.01,
+                    transition: transitionTween
+                },
                 secondAnimation: {
                     opacity: 1,
-                    transition: { ...transitionSpring, delay: 6.75 },
+                    transition: transitionSpring
                 },
+            }}
+            onAnimationComplete={() => {
+                if (animationName === "firstAnimation") {
+                    setAnimationName("secondAnimation")
+                }
             }}
         >
             <ul className="flex">
