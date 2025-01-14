@@ -35,7 +35,7 @@ export function Greeting({ userIp }: { userIp: string }) {
                             <button className="font-bold bg-gradient-to-r from-primaryGreen to-primaryBlue text-gradient">{userIp}!</button>
                         </TooltipTrigger>
                         <TooltipContent>
-                            <p>That&apos;s your public IP address!</p>
+                            <p className="max-w-[25vw]">That&apos;s your public IP address!</p>
                         </TooltipContent>
                     </Tooltip>
                 </TooltipProvider>

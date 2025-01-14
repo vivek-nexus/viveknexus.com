@@ -27,17 +27,19 @@ export function Contact() {
                 </div>
                 <footer>
                     <p>
-                        Hand built with Next.js + Tailwind CSS and animated with Motion. Contains
+                        Hand built with Next.js + Tailwind CSS and animated with Motion. Contains&nbsp;
                         <TooltipProvider>
                             <Tooltip delayDuration={100}>
                                 <TooltipTrigger asChild>
-                                    <span className="font-bold"> easter eggs.</span>
+                                    <button className="font-bold">easter eggs</button>
                                 </TooltipTrigger>
                                 <TooltipContent>
-                                    <p className="leading-normal">Two reside inside the mind and the other three in a tooltip like this </p>
+                                    <p className="leading-normal max-w-[25vw]">Two reside inside the mind and the other three in a tooltip like this </p>
                                 </TooltipContent>
                             </Tooltip>
                         </TooltipProvider>
+                        <span className="md:hidden font-extralight">&nbsp;(clues in the desktop version)</span>
+                        .
                     </p>
                 </footer>
             </section>
