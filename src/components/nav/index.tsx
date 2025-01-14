@@ -22,7 +22,8 @@ export function Nav() {
     }, [showEasterEggMessage])
 
     useEffect(() => {
-        if (tooltipInvokedCount > 4 && tooltipInvokedCount <= 16) {
+        console.log(tooltipInvokedCount)
+        if (tooltipInvokedCount > 1 && tooltipInvokedCount <= 4) {
             setShowEasterEggMessage(true)
         }
     }, [tooltipInvokedCount])

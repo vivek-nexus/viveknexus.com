@@ -24,21 +24,7 @@ export const metadata: Metadata = {
         width: 1200,
         height: 630,
         alt: 'A graphic indicating fusion of designer half and engineer half of author\'s brain',
-      },
-      {
-        url: 'https://viveknexus.com/images/link-preview-2.png',
-        secureUrl: 'https://viveknexus.com/images/link-preview-2.png',
-        type: 'image/png',
-        width: 256,
-        height: 256,
-      },
-      {
-        url: 'https://viveknexus.com/images/link-preview-3.png',
-        secureUrl: 'https://viveknexus.com/images/link-preview-3.png',
-        type: 'image/png',
-        width: 1920,
-        height: 1080,
-      },
+      }
     ],
   },
 

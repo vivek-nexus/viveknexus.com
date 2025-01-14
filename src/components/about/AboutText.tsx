@@ -5,10 +5,15 @@ import {
     TooltipTrigger,
 } from "@/components/ui/tooltip"
 import { RandomThought } from "./RandomThought"
+import { useTooltipInvoked } from "@/context/TooltipInvokedContext"
+import { useState } from "react"
 
 
 
 export function AboutText({ number }: { number: number }) {
+    const [isTooltipOpen, setIsTooltipOpen] = useState(false)
+    const { setTooltipInvokedCount } = useTooltipInvoked()
+
     return (
         <p>
             {(number === 1) && `Two core aspects of my professional life — design and frontend — I learnt them outside the formal education framework! Most skills are ultimately a combination of experience and persistence, yeah? Purpose and process are both important, but if given a choice, I might show a healthy disrespect for the process.`}
@@ -18,7 +23,16 @@ export function AboutText({ number }: { number: number }) {
                     Whenever I day dream, my brain has this weird habit of zooming out and finding similarities between seemingly unrelated things of life.
                     <span className="hidden md:inline"> A&nbsp;
                         <TooltipProvider>
-                            <Tooltip delayDuration={100}>
+                            <Tooltip
+                                delayDuration={100}
+                                open={isTooltipOpen}
+                                onOpenChange={() => {
+                                    if (!isTooltipOpen) {
+                                        setTooltipInvokedCount((tooltipInvokedCount) => (tooltipInvokedCount + 1))
+                                    }
+                                    setIsTooltipOpen((isTooltipOpen) => !isTooltipOpen)
+                                }}
+                            >
                                 <TooltipTrigger asChild>
                                     <button
                                         className="font-bold bg-gradient-to-r from-primaryGreen to-primaryBlue text-gradient"
