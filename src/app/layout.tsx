@@ -29,8 +29,8 @@ export const metadata: Metadata = {
         url: 'https://viveknexus.com/images/link-preview-2.png',
         secureUrl: 'https://viveknexus.com/images/link-preview-2.png',
         type: 'image/png',
-        width: 1200,
-        height: 1200,
+        width: 256,
+        height: 256,
       },
       {
         url: 'https://viveknexus.com/images/link-preview-3.png',
