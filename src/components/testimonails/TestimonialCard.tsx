@@ -93,7 +93,7 @@ export const TestimonialCard = ({
             >
                 {items.map((item) => (
                     <li
-                        className="w-[80vw] md:w-[40vw] h-fit relative border border-white/25 bg-gradient-to-t from-[#b16ac2]/25 to-[#000000] text-[#c0c0c0] rounded-xl flex-shrink-0 p-9 shadow-whiteGlow1 bg-center bg-cover"
+                        className="w-[80vw] md:w-[40vw] h-fit relative border border-white/25 bg-gradient-to-t from-[#b16ac2]/25 to-[#101010] text-[#c0c0c0] rounded-xl flex-shrink-0 p-9 shadow-whiteGlow1 bg-center bg-cover"
                         key={item.name}
                     >
                         <p

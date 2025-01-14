@@ -16,7 +16,8 @@ export default {
         "backgroundGrid": "url('/images/background-grid.svg')"
       },
       boxShadow: {
-        whiteGlow1: "0px 0px 24px 4px rgba(255, 255, 255, 0.12) inset"
+        whiteGlow1: "0px 0px 24px 4px rgba(255, 255, 255, 0.12) inset",
+        whiteGlow2: "0px 0px 16px 4px rgba(255, 255, 255, 0.25) inset"
       },
       animation: {
         scroll:

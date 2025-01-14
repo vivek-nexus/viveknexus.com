@@ -62,7 +62,7 @@ export default function RootLayout({
         })();
       `}</Script>
       <body
-        className={`${suse.className} antialiased bg-black text-[#C0C0C0]`}
+        className={`${suse.className} antialiased bg-[#101010] text-[#C0C0C0]`}
       >
         {children}
       </body>

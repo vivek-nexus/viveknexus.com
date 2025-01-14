@@ -89,16 +89,16 @@ export function Hero() {
                     }}
                     className={`relative grid grid-cols-2 font-extralight whitespace-nowrap`}
                     initial={{
-                        background: "radial-gradient(41.02% 54.97% at 50% 50%, #000000 14.36%, #000000 60.9%)",
+                        background: "radial-gradient(41.02% 54.97% at 50% 50%, #101010 14.36%, #101010 60.9%)",
                     }}
                     animate={animationName}
                     variants={{
                         firstAnimation: {
-                            background: "radial-gradient(41.02% 54.97% at 50% 50%, #222222 14.36%, #000000 60.9%)",
+                            background: "radial-gradient(41.02% 54.97% at 50% 50%, #222222 14.36%, #101010 60.9%)",
                             transition: transitionTween,
                         },
                         secondAnimation: {
-                            background: "radial-gradient(41.02% 54.97% at 50% 50%, #555555 10.36%, #000000 60.9%)",
+                            background: "radial-gradient(41.02% 54.97% at 50% 50%, #555555 10.36%, #101010 60.9%)",
                             transition: transitionSpring,
                         },
                     }}
