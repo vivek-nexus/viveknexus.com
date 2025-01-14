@@ -7,11 +7,11 @@ export function Stat({ index, name, value, iconURI }: StatProps & { index: numbe
         >
             <p className="text-[#666666]">{name}</p>
             <div className="flex gap-1 items-center">
-                <p>{value}</p>
+                <p className="-mb-[1px]">{value}</p>
                 <img
                     src={`/icons/${iconURI}`}
                     alt={`Icon ${iconURI.split('.')[0]}`}
-                    className="h-4 mb-1"
+                    className="h-4"
                 />
             </div>
         </div>

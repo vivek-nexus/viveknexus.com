@@ -34,7 +34,7 @@ export function DesignValueCard({ text1, text2, className }: { text1: string, te
     return (
         <div
             ref={card}
-            className={`relative w-36 md:w-48 lg:w-64 h-24 md:h-36 lg:h-48 rounded-2xl lg:rounded-3xl flex justify-center items-center text-base md:text-lg lg:text-2xl ${className ? className : ``}`}
+            className={`design-value-card relative w-36 md:w-48 lg:w-64 h-24 md:h-36 lg:h-48 rounded-2xl lg:rounded-3xl flex justify-center items-center text-base md:text-lg lg:text-2xl ${className ? className : ``}`}
             style={{
                 border: "solid 1px transparent",
                 backgroundImage: "linear-gradient(180deg, #0C0803 0%, #262525 100%), linear-gradient(180deg, #835120 0%, #CCCBCB 100%)",

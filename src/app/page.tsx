@@ -63,6 +63,24 @@ export default function Home() {
   return (
     <EasterEggProvider>
       <TooltipInvokedProvider>
+        <div className="p-2 -translate-x-[1000px] focus-within:translate-x-0">
+          <button
+            className="mr-2 p-2 rounded-md border border-[#c0c0c0]/50"
+            onClick={() => {
+              document.querySelector<HTMLElement>(".design-value-card")?.focus()
+            }}
+          >
+            Skip to main content {!showPage && `(Page is still playing opening animations)`}
+          </button>
+          <button
+            className="mr-2 p-2 rounded-md border border-[#c0c0c0]/50"
+            onClick={() => {
+              document.querySelector<HTMLElement>("nav a")?.focus()
+            }}
+          >
+            Skip to nav {!showPage && `(Page is still playing opening animations)`}
+          </button>
+        </div>
         <Nav />
         <main>
           <AnimatePresence>
