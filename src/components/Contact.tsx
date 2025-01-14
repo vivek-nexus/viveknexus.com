@@ -34,7 +34,7 @@ export function Contact() {
                                     <span className="font-bold"> easter eggs.</span>
                                 </TooltipTrigger>
                                 <TooltipContent>
-                                    <p className="leading-normal">Two reside inside the mind and three in a tooltip like this </p>
+                                    <p className="leading-normal">Two reside inside the mind and the other three in a tooltip like this </p>
                                 </TooltipContent>
                             </Tooltip>
                         </TooltipProvider>
