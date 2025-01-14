@@ -34,6 +34,7 @@ export function DesignProjectCard(
     }: DesignProjectCardProps) {
     return (
         <>
+            {/* JSX style because I need media queries as well as a state variable :( */}
             <style jsx>{`
                 .design-project-card{
                     background: radial-gradient(100.05% 77.64% at 0.74% 100.32%, #${gradientColourHex + gradientStartOpacity} 14.25%, #${gradientColourHex}00 100%);
@@ -51,11 +52,20 @@ export function DesignProjectCard(
                 <div
                     className="col-span-2 lg:col-span-1 order-2 lg:order-1">
                     <div className="mb-12 md:mb-16">
-                        <p className="font-extralight text-[#dfdfdf] text-3xl md:text-4xl mb-6">{title}</p>
+                        <p
+                            className="font-extralight text-white1 text-3xl md:text-4xl mb-6"
+                        >
+                            {title}
+                        </p>
                         <p className="mb-6">{description} </p>
                         <div className="flex md:flex-col gap-4 md:gap-2 mb-6 whitespace-nowrap overflow-x-auto">
                             {skills.map((skill) => {
-                                return (<Skill key={skill} skill={skill} gradientStartHex={gradientColourHex} />)
+                                return (
+                                    <Skill
+                                        key={skill}
+                                        skill={skill}
+                                        gradientStartHex={gradientColourHex}
+                                    />)
                             })}
                         </div>
                         {quote &&
@@ -73,10 +83,15 @@ export function DesignProjectCard(
                         }}
                     >
                         {linkText}
-                        <img src="/icons/north-east-arrow.svg" alt="North east arrow icon indicating that the link opens in a new tab" className="h-4 group-hover:translate-x-1 group-hover:-translate-y-1 duration-300 ease-in-out" />
+                        <img
+                            src="/icons/north-east-arrow.svg"
+                            alt="North east arrow icon indicating that the link opens in a new tab"
+                            className="h-4 group-hover:translate-x-1 group-hover:-translate-y-1 duration-300 ease-in-out"
+                        />
                     </a>
                 </div>
-                <div className={`col-span-2 aspect-square lg:aspect-auto max-h-48 lg:max-h-full lg:col-span-1 order-1 lg:order-2 flex justify-start lg:justify-end bg-no-repeat bg-contain bg-center lg:bg-right`}
+                <div
+                    className={`col-span-2 aspect-square lg:aspect-auto max-h-48 lg:max-h-full lg:col-span-1 order-1 lg:order-2 flex justify-start lg:justify-end bg-no-repeat bg-contain bg-center lg:bg-right`}
                     style={{
                         backgroundImage: `url("${imageURI}")`
                     }}

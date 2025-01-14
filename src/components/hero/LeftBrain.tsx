@@ -32,29 +32,30 @@ export function LeftBrain() {
                 >
                     {!startAnimation ?
                         <>
+                            {/* Radial gradient  start stop and end stop colours (same) for first animation */}
                             <stop
                                 id="stop1-1-l"
-                                stopColor="#992109"
+                                stopColor="#862613"
                             />
                             <stop
                                 id="stop2-1-l"
                                 offset="1"
-                                stopColor="#992109"
+                                stopColor="#862613"
                             />
                         </>
                         : <>
+                            {/* Radial gradient  start stop and end stop colours for second animation */}
+
                             <motion.stop
                                 id="stop1-1-l"
-                                stopColor="#992109"
-                                initial={{ stopColor: "#992109" }}
+                                initial={{ stopColor: "#862613" }}
                                 animate={{ stopColor: "#CC9B6B" }}
                                 transition={{ ...transitionSpring }}
                             />
                             <motion.stop
                                 id="stop2-1-l"
                                 offset="1"
-                                stopColor="#992109"
-                                initial={{ stopColor: "#992109" }}
+                                initial={{ stopColor: "#862613" }}
                                 animate={{ stopColor: "#862613" }}
                                 transition={{ ...transitionSpring }}
                             />

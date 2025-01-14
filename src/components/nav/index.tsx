@@ -29,7 +29,7 @@ export function Nav() {
 
     return (
         <motion.nav
-            className={`fixed w-fit z-50 top-0 left-1/2 -translate-x-1/2 mx-auto bg-black/50 border-b border-l border-r border-[#c0c0c0]/50 backdrop-blur-md rounded-b-2xl overflow-clip transition-all duration-500 ease-in-out ${showEasterEggMessage ? `max-h-24 md:max-h-28` : `max-h-14 md:max-h-20`}`}
+            className={`fixed w-fit z-50 top-0 left-1/2 -translate-x-1/2 mx-auto bg-black1/50 border-b border-l border-r border-white3 backdrop-blur-md rounded-b-2xl overflow-clip transition-all duration-500 ease-in-out ${showEasterEggMessage ? `max-h-24 md:max-h-28` : `max-h-14 md:max-h-20`}`}
             initial={{ opacity: 0 }}
             animate={"secondAnimation"}
             variants={{

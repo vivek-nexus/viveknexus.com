@@ -173,6 +173,7 @@ export function Hero() {
                         }}
                     >
                     </motion.div>
+                    {/* TODO: Revisit brain half colours */}
                     {/* LEFT BRAIN CONTAINER */}
                     <div className="relative col-span-1">
                         <motion.div
@@ -200,7 +201,7 @@ export function Hero() {
                             <LeftBrain />
                         </motion.div>
                         <motion.h2
-                            className="text-[#dfdfdf] text-right text-[64px] absolute right-8 top-1/2"
+                            className="text-white1 text-right text-[64px] absolute right-8 top-1/2"
                             initial={{ x: -780, y: "-50%", opacity: 0 }}
                             animate={animationName}
                             variants={{
@@ -246,7 +247,7 @@ export function Hero() {
                             <RightBrain />
                         </motion.div>
                         <motion.h2
-                            className="text-[#dfdfdf] text-left text-[64px] absolute left-8 top-1/2"
+                            className="text-white1 text-left text-[64px] absolute left-8 top-1/2"
                             initial={{ x: 780, y: "-50%", opacity: 0 }}
                             animate={animationName}
                             variants={{
@@ -288,7 +289,7 @@ export function Hero() {
             >
                 {/* Increased dimensions to prevent text being unreadable in mobile */}
                 <img src="/icons/briefcase-icon.svg" alt="Briefcase icon" className={`${isLandscape ? `h-auto` : `h-8`}`} />
-                <p className={`text-[#dfdfdf] text-center ${isLandscape ? `text-2xl` : `text-4xl`} font-extralight whitespace-nowrap`}>
+                <p className={`text-white1 text-center ${isLandscape ? `text-2xl` : `text-4xl`} font-extralight whitespace-nowrap`}>
                     Senior Product Designer at BrowserStack
                 </p>
             </motion.div>

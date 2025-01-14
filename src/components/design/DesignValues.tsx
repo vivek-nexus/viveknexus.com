@@ -29,11 +29,11 @@ export function DesignValues() {
                     <div className="absolute left-1/2 -translate-x-1/2 mx-auto mt-20 w-[50%] lg:w-[125%] h-8 bg-white/25 blur-[24px]" style={{ borderRadius: "100px/25px" }}>
                     </div>
                     <h2
-                        className="font-extrabold text-5xl lg:text-7xl text-black text-center pb-2 bg-gradient-to-b from-[#ff9326] from-30% to-white"
+                        className="font-extrabold text-5xl lg:text-7xl text-black text-center pb-2 bg-gradient-to-b from-orange2 from-30% to-white"
                         style={{
                             WebkitBackgroundClip: "text",
                             WebkitTextStroke: "4px transparent",
-                            textShadow: "0px 0px 36.4px rgba(255, 255, 255, 0.25)"
+                            textShadow: "0px 0px 36px rgba(255, 255, 255, 0.25)"
                         }}
                     >
                         Design

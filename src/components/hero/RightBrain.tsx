@@ -32,29 +32,29 @@ export function RightBrain() {
                 >
                     {!startAnimation ?
                         <>
+                            {/* Radial gradient  start stop and end stop colours (same) for first animation */}
                             <stop
                                 id="stop1-1-r"
-                                stopColor="#06275B"
+                                stopColor="#102B54"
                             />
                             <stop
                                 id="stop2-1-r"
                                 offset="1"
-                                stopColor="#06275B"
+                                stopColor="#102B54"
                             />
                         </>
                         : <>
+                            {/* Radial gradient  start stop and end stop colours for second animation */}
                             <motion.stop
                                 id="stop1-1-r"
-                                stopColor="#06275B"
-                                initial={{ stopColor: "#06275B" }}
+                                initial={{ stopColor: "#102B54" }}
                                 animate={{ stopColor: "#5589A6" }}
                                 transition={{ ...transitionSpring }}
                             />
                             <motion.stop
                                 id="stop2-1-r"
                                 offset="1"
-                                stopColor="#06275B"
-                                initial={{ stopColor: "#06275B" }}
+                                initial={{ stopColor: "#102B54" }}
                                 animate={{ stopColor: "#102B54" }}
                                 transition={{ ...transitionSpring }}
                             />

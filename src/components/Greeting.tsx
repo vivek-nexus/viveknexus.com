@@ -32,7 +32,7 @@ export function Greeting({ userIp }: { userIp: string }) {
                 <TooltipProvider>
                     <Tooltip delayDuration={100}>
                         <TooltipTrigger asChild>
-                            <button className="font-bold bg-gradient-to-r from-[#2ed1a0] to-[#0e5edf] text-gradient">{userIp}!</button>
+                            <button className="font-bold bg-gradient-to-r from-primaryGreen to-primaryBlue text-gradient">{userIp}!</button>
                         </TooltipTrigger>
                         <TooltipContent>
                             <p>That&apos;s your public IP address!</p>
@@ -40,7 +40,7 @@ export function Greeting({ userIp }: { userIp: string }) {
                     </Tooltip>
                 </TooltipProvider>
             </p>
-            <h2 className="text-2xl md:text-5xl font-extralight mb-9 bg-gradient-to-b from-white to-[#666666] text-gradient">
+            <h2 className="text-2xl md:text-5xl font-extralight mb-9 bg-gradient-to-b from-white to-white3 text-gradient">
                 Welcome to my corner on the internet!
             </h2>
         </motion.section >

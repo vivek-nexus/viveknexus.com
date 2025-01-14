@@ -53,6 +53,7 @@ export function DesignValueCard({ number, className }: { number: 1 | 2 | 3 | 4, 
             ref={card}
             className={`design-value-card relative w-36 md:w-48 lg:w-64 h-24 md:h-36 lg:h-48 rounded-2xl lg:rounded-3xl ${getRotation(number)} flex justify-center items-center text-base md:text-lg lg:text-2xl ${className ? className : ``}`}
             style={{
+                // Gradient border
                 border: "solid 1px transparent",
                 backgroundImage: "linear-gradient(180deg, #0C0803 0%, #262525 100%), linear-gradient(180deg, #835120 0%, #CCCBCB 100%)",
                 backgroundOrigin: "border-box",
@@ -73,7 +74,7 @@ export function DesignValueCard({ number, className }: { number: 1 | 2 | 3 | 4, 
                     animate={{ opacity: 1 }}
                     exit={{ opacity: 0 }}
                     transition={{ duration: 0.5, type: "tween", ease: "easeIn" }}
-                    className="text-center font-extralight text-[#dfdfdf] p-6">
+                    className="text-center font-extralight text-white2 p-6">
                     {designValues[number].text1}
                 </motion.p>}
             {showText2 &&
@@ -82,7 +83,7 @@ export function DesignValueCard({ number, className }: { number: 1 | 2 | 3 | 4, 
                     animate={{ opacity: 1 }}
                     exit={{ opacity: 0 }}
                     transition={{ duration: 0.5, type: "tween", ease: "easeIn" }}
-                    className="text-center font-extralight text-[#FB9B3E] p-6">
+                    className="text-center font-extralight text-orange1 p-6">
                     {designValues[number].text2}
                 </motion.p>}
             <div

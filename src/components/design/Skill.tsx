@@ -2,7 +2,7 @@ export function Skill({ skill, gradientStartHex }: { skill: string, gradientStar
     return (
         <p
             className="text-gradient bg-gradient-to-b"
-            style={{ backgroundImage: `linear-gradient(180deg, #C0C0C0 0%, #${gradientStartHex} 100%)` }}
+            style={{ backgroundImage: `linear-gradient(180deg, var(--white-1) 0%, #${gradientStartHex} 100%)` }}
         >
             {skill}
         </p>

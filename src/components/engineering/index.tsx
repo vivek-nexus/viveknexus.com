@@ -42,7 +42,6 @@ export function Engineering() {
                     })}
                 </div>
             </div>
-
         </section>
     )
 }

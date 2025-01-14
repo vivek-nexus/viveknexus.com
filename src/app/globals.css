@@ -2,6 +2,18 @@
 @tailwind components;
 @tailwind utilities;
 
+:root {
+    --bg-black-1: #101010;
+    --white-1: #DFDFDF;
+    --white-2: #C0C0C0;
+    --white-3: #666666;
+    --primary-green: #2ED1A0;
+    --primary-blue: #0E5EDF;
+    --orange-1: #FB9B3E;
+    --orange-2: #FF9326;
+    --purple: #B16AC2;
+}
+
 html {
     scroll-behavior: smooth;
 }
@@ -12,8 +24,6 @@ html {
     background-clip: text;
     color: transparent;
 }
-
-
 
 /* ANIMATED MESH GRADIENT */
 @keyframes contact-animation {

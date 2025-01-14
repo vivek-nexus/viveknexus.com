@@ -116,7 +116,7 @@ export const DirectionAwareHover = ({
                             ease: "easeOut",
                         }}
                         className={cn(
-                            "text-[#dfdfdf] absolute bottom-4 left-4 z-40",
+                            "text-white1 absolute bottom-4 left-4 z-40",
                             childrenClassName
                         )}
                     >

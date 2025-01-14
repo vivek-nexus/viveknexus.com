@@ -11,7 +11,7 @@ export function Contact() {
         <>
             <section
                 id="contact"
-                className="animated-mesh-gradient px-4 pt-24 pb-4 text-[#dfdfdf] text-center"
+                className="animated-mesh-gradient px-4 pt-24 pb-8 text-white1 text-center"
             >
                 <h2 className="text-5xl md:text-7xl font-extralight mb-12">What say?</h2>
                 <div className="mb-12 flex gap-4 md:gap-8 justify-center items-center opacity-75">
@@ -34,7 +34,7 @@ export function Contact() {
                                     <span className="font-bold"> easter eggs.</span>
                                 </TooltipTrigger>
                                 <TooltipContent>
-                                    <p className="leading-normal">Two are in halves that join and three in a tooltip like this </p>
+                                    <p className="leading-normal">Two reside inside the mind and three in a tooltip like this </p>
                                 </TooltipContent>
                             </Tooltip>
                         </TooltipProvider>

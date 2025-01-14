@@ -11,6 +11,15 @@ export default {
       colors: {
         background: "var(--background)",
         foreground: "var(--foreground)",
+        black1: "#101010",
+        white1: "#DFDFDF",
+        white2: "#C0C0C0",
+        white3: "#666666",
+        primaryGreen: "#2ED1A0",
+        primaryBlue: "#0E5EDF",
+        orange1: "#FB9B3E",
+        orange2: "#FF9326",
+        purple1: "#803B85"
       },
       backgroundImage: {
         "backgroundGrid": "url('/images/background-grid.svg')"
