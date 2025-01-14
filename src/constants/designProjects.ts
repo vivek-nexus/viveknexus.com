@@ -10,6 +10,7 @@ export const designProjects = [
         hyperLink: "https://vivek-nexus.medium.com/design-of-award-winning-aa-consent-approval-ui-1c09d3e27a5a",
         buttonGradientEndOpacity: 60,
         imageURI: "/images/design-1.webp",
+        addMask: true
     }
     ,
     {
@@ -23,6 +24,7 @@ export const designProjects = [
         hyperLink: "https://www.figma.com/community/file/1087129513242287190",
         buttonGradientEndOpacity: 60,
         imageURI: "/images/design-2.svg",
+        addMask: false
     },
     {
         gradientColourHex: "0075BF",
@@ -34,5 +36,6 @@ export const designProjects = [
         hyperLink: "https://clearfrontend.vercel.app/",
         buttonGradientEndOpacity: 60,
         imageURI: "/images/design-3.svg",
+        addMask: false
     }
 ]

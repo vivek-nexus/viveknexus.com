@@ -30,9 +30,6 @@
 <g mask="url(#mask3_865_132)">
 <path d="M93 299L85 291L93 283L101 291L93 299ZM84.5 275.5L74.5 265.5L93 247L111.5 265.5L101.5 275.5L93 267L84.5 275.5ZM67.5 309.5L49 291L67.5 272.5L77.5 282.5L69 291L77.5 299.5L67.5 309.5ZM118.5 309.5L108.5 299.5L117 291L108.5 282.5L118.5 272.5L137 291L118.5 309.5ZM93 335L74.5 316.5L84.5 306.5L93 315L101.5 306.5L111.5 316.5L93 335Z" fill="url(#paint11_linear_865_132)"/>
 </g>
-<g opacity="0.75">
-<rect width="410" height="357" fill="url(#paint12_radial_865_132)"/>
-</g>
 <defs>
 <linearGradient id="paint0_linear_865_132" x1="205" y1="115" x2="205" y2="19" gradientUnits="userSpaceOnUse">
 <stop stop-color="#FF584C"/>
@@ -82,9 +79,5 @@
 <stop stop-color="#6D6D6D"/>
 <stop offset="1" stop-color="#343434"/>
 </linearGradient>
-<radialGradient id="paint12_radial_865_132" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(205 178.5) rotate(90) scale(178.5 205)">
-<stop stop-opacity="0.25"/>
-<stop offset="0.852577" stop-opacity="0.75"/>
-</radialGradient>
 </defs>
 </svg>

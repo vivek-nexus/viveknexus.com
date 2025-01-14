@@ -16,7 +16,8 @@ interface DesignProjectCardProps {
     linkText: string
     hyperLink: string
     buttonGradientEndOpacity: number
-    imageURI: string
+    imageURI: string,
+    addMask: boolean
 }
 
 
@@ -30,7 +31,8 @@ export function DesignProjectCard(
         linkText,
         hyperLink,
         buttonGradientEndOpacity,
-        imageURI
+        imageURI,
+        addMask,
     }: DesignProjectCardProps) {
     return (
         <>
@@ -47,7 +49,7 @@ export function DesignProjectCard(
                 }
             `}</style>
             <div
-                className="w-full rounded-2xl p-6 md:p-12 grid grid-cols-2 gap-9 border-2 border-white/25 design-project-card"
+                className="w-full rounded-2xl p-6 md:p-12 grid grid-cols-2 border-2 border-white/25 design-project-card"
             >
                 <div
                     className="col-span-2 lg:col-span-1 order-2 lg:order-1">
@@ -91,7 +93,7 @@ export function DesignProjectCard(
                     </a>
                 </div>
                 <div
-                    className={`col-span-2 aspect-square lg:aspect-auto max-h-48 lg:max-h-full lg:col-span-1 order-1 lg:order-2 flex justify-start lg:justify-end bg-no-repeat bg-contain bg-center lg:bg-right`}
+                    className={`col-span-2 lg:col-span-1 aspect-square lg:aspect-auto max-h-48 lg:max-h-full order-1 lg:order-2 flex justify-start lg:justify-end bg-no-repeat bg-contain bg-center lg:bg-right ${addMask ? `mask-radial-gradient` : ``}`}
                     style={{
                         backgroundImage: `url("${imageURI}")`
                     }}

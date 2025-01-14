@@ -28,6 +28,7 @@ export function Design() {
                             hyperLink={designProject.hyperLink}
                             buttonGradientEndOpacity={designProject.buttonGradientEndOpacity}
                             imageURI={designProject.imageURI}
+                            addMask={designProject.addMask}
                         />
                     )
                 })}

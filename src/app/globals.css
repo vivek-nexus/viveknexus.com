@@ -25,6 +25,11 @@ html {
     color: transparent;
 }
 
+.mask-radial-gradient {
+    mask-image: radial-gradient(circle, black 50%, transparent 70%, transparent 100%);
+}
+
+
 /* ANIMATED MESH GRADIENT */
 @keyframes contact-animation {
     0% {
