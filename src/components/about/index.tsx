@@ -3,7 +3,7 @@ import { AboutText } from "./AboutText"
 
 export function About() {
     return (
-        <section id="about" className="max-w-[1024px] mx-auto px-4 font-extralight py-12 md:py-24">
+        <section id="about" className="max-w-[1024px] mx-auto px-6 font-extralight py-12 md:py-24">
             <h2 className="text-5xl md:text-7xl text-center mb-12">About? Me?</h2>
             <div className="md:hidden">
                 <div className="mb-4">

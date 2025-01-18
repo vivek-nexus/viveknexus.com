@@ -17,7 +17,7 @@ export function Testimonials() {
                     items={testimonials}
                     direction="left"
                     speed="fast"
-                    className="py-48"
+                    className="pt-6 md:pt-24 pb-24 md:pb-48"
                 />
             </div>
         </section>

@@ -1,5 +1,6 @@
 "use client"
 
+import { useGlobalContext } from "@/context/GlobalContext"
 import { cn } from "@/lib/utils"
 import { Lora } from "next/font/google"
 import React, { useEffect, useState } from "react"
@@ -28,12 +29,29 @@ export const TestimonialCard = ({
 }) => {
     const containerRef = React.useRef<HTMLDivElement>(null)
     const scrollerRef = React.useRef<HTMLUListElement>(null)
+    const [start, setStart] = useState(false)
+    const { isTouchDevice } = useGlobalContext()
 
     useEffect(() => {
-        addAnimation()
+        cloneElements()
+        getDirection()
+        getSpeed()
+        setStart(true)
     }, [])
-    const [start, setStart] = useState(false)
-    function addAnimation() {
+
+    useEffect(() => {
+        if (isTouchDevice) {
+            setStart(false)
+            removeClonedElements()
+        }
+        else {
+            setStart(true)
+        }
+    }, [isTouchDevice])
+
+
+    // TODO: Understand why this creates 4 duplicates of each item
+    function cloneElements() {
         if (containerRef.current && scrollerRef.current) {
             const scrollerContent = Array.from(scrollerRef.current.children)
 
@@ -43,10 +61,17 @@ export const TestimonialCard = ({
                     scrollerRef.current.appendChild(duplicatedItem)
                 }
             })
+        }
+    }
 
-            getDirection()
-            getSpeed()
-            setStart(true)
+    function removeClonedElements() {
+        if (scrollerRef.current?.children) {
+            while (scrollerRef.current?.children.length > items.length) {
+                const lastElement = scrollerRef.current?.lastChild
+                if (lastElement) {
+                    scrollerRef.current?.removeChild(lastElement)
+                }
+            }
         }
     }
     const getDirection = () => {
@@ -79,7 +104,7 @@ export const TestimonialCard = ({
         <div
             ref={containerRef}
             className={cn(
-                "scroller relative z-20 max-w-full overflow-hidden [mask-image:linear-gradient(to_right,transparent,white_10%,white_90%,transparent)]",
+                `scroller relative z-20 max-w-full ${isTouchDevice ? `px-6 overflow-auto` : `overflow-hidden [mask-image:linear-gradient(to_right,transparent,white_10%,white_90%,transparent)]`}`,
                 className
             )}
         >
@@ -87,7 +112,7 @@ export const TestimonialCard = ({
                 ref={scrollerRef}
                 className={cn(
                     "flex min-w-full shrink-0 gap-4 py-4 w-max flex-nowrap",
-                    start && "animate-scroll ",
+                    start && "animate-scroll",
                     pauseOnHover && "hover:[animation-play-state:paused]"
                 )}
             >
