@@ -6,7 +6,7 @@ import { motion } from "motion/react"
 
 export function Design() {
     return (
-        <section id="design" className="max-w-[1024px] mx-auto px-6 py-12 md:py-24">
+        <section id="design" className="max-w-[1024px] mx-auto px-6 md:px-4 py-12 md:pt-24 md:pb-12">
             <DesignValues />
             <motion.div
                 className="flex flex-col gap-8"

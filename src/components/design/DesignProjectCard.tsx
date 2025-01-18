@@ -39,12 +39,12 @@ export function DesignProjectCard(
             {/* JSX style because I need media queries as well as a state variable :( */}
             <style jsx>{`
                 .design-project-card{
-                    background: radial-gradient(100.05% 77.64% at 0.74% 100.32%, #${gradientColourHex + gradientStartOpacity} 14.25%, #${gradientColourHex}00 100%);
+                    background: radial-gradient(100.05% 77.64% at 0.74% 100.32%, #${gradientColourHex + gradientStartOpacity} 14.25%, #${gradientColourHex}15 100%);
                 }
 
                 @media only screen and (min-width: 1024px) {
                     .design-project-card{
-                        background: radial-gradient(32.05% 77.64% at 0.74% 2.32%, #${gradientColourHex + gradientStartOpacity} 14.25%, #${gradientColourHex}00 100%);
+                        background: radial-gradient(32.05% 77.64% at 0.74% 2.32%, #${gradientColourHex + gradientStartOpacity} 14.25%, #${gradientColourHex}15 100%);
                     }
                 }
             `}</style>

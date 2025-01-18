@@ -13,15 +13,15 @@ export function Engineering() {
     return (
         <section
             id="engineering"
-            className={`relative ${spaceMono.className} py-24 [mask-image:linear-gradient(to_bottom,transparent,white_10%,white_90%,transparent)]`}
+            className={`relative ${spaceMono.className} py-36 md:py-48 [mask-image:linear-gradient(to_bottom,transparent,white_10%,white_95%,transparent)]`}
         >
             <ShootingStars
-                minDelay={0}
+                minDelay={500}
                 maxDelay={2500}
             />
             <StarsBackground
                 twinkleProbability={1}
-                starDensity={0.00095}
+                starDensity={0.00055}
             />
             <div className="max-w-[1024px] mx-auto px-6">
                 <h2 className="text-5xl md:text-7xl text-center font-extralight mb-12">Engineering</h2>
