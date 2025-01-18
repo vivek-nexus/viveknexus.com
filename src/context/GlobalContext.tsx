@@ -1,6 +1,7 @@
 "use client"
 
-import React, { createContext, useState, useContext, ReactNode, Dispatch, SetStateAction, FC } from 'react'
+import { useIsTouchDevice } from "@/hooks/useIsTouchDevice"
+import React, { createContext, useState, useContext, ReactNode, Dispatch, SetStateAction, FC, useEffect } from 'react'
 
 interface GlobalContextType {
     showEasterEggMessage: boolean
@@ -21,6 +22,12 @@ export const GlobalContextProvider: FC<GlobalContextProviderProps> = ({ children
     const [showEasterEggMessage, setShowEasterEggMessage] = useState(false)
     const [tooltipInvokedCount, setTooltipInvokedCount] = useState(0)
     const [isTouchDevice, setIsTouchDevice] = useState(false)
+
+    const isTouchDeviceLocal = useIsTouchDevice()
+
+    useEffect(() => {
+        setIsTouchDevice(isTouchDeviceLocal)
+    }, [isTouchDeviceLocal])
 
     return (
         <GlobalContext.Provider value={{

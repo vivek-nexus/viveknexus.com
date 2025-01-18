@@ -33,18 +33,15 @@ export const TestimonialCard = ({
     const { isTouchDevice } = useGlobalContext()
 
     useEffect(() => {
-        cloneElements()
-        getDirection()
-        getSpeed()
-        setStart(true)
-    }, [])
-
-    useEffect(() => {
         if (isTouchDevice) {
             setStart(false)
             removeClonedElements()
         }
         else {
+            setStart(true)
+            cloneElements()
+            getDirection()
+            getSpeed()
             setStart(true)
         }
     }, [isTouchDevice])

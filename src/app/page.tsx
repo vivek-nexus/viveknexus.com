@@ -10,30 +10,17 @@ import { Engineering } from "@/components/engineering"
 import { About } from "@/components/about"
 import { Testimonials } from "@/components/testimonails"
 import { Nav } from "@/components/nav"
-import { useGlobalContext } from "@/context/GlobalContext"
 
 export default function Home() {
   const [showGreeting, setShowGreeting] = useState(false)
   const [showHero, setShowHero] = useState(false)
   const [showPage, setShowPage] = useState(false)
   const [userIp, setUserIp] = useState("<getting your ip address>")
-  const { setIsTouchDevice } = useGlobalContext()
 
   let hideGreetingTimeout: NodeJS.Timeout
   let showHeroTimeout: NodeJS.Timeout
   let showPageTimeout: NodeJS.Timeout
   let scrollToAnchorTimeout: NodeJS.Timeout
-
-  useEffect(() => {
-    function handleTouchStart() {
-      console.log("Touch device")
-      setIsTouchDevice(true)
-      document.removeEventListener("touchstart", handleTouchStart)
-    }
-    document.addEventListener("touchstart", handleTouchStart)
-
-    return () => document.removeEventListener("touchstart", handleTouchStart)
-  }, [])
 
   useEffect(() => {
     fetch("https://render-express-server-q222.onrender.com/ip")
