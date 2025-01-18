@@ -1,15 +1,13 @@
 import { AnimatePresence, motion } from "motion/react"
 import { transitionSpring, transitionTween } from "../hero"
 import { NavItem } from "./NavItem"
-import { useEasterEgg } from "@/context/EasterEggContext"
+import { useGlobalContext } from "@/context/GlobalContext"
 import { useEffect, useState } from "react"
 
 
 export function Nav() {
     const [animationName, setAnimationName] = useState("firstAnimation")
-    const { showEasterEggMessage, setShowEasterEggMessage, tooltipInvokedCount } = useEasterEgg()
-
-    console.log("New nav render")
+    const { showEasterEggMessage, setShowEasterEggMessage, tooltipInvokedCount } = useGlobalContext()
 
     useEffect(() => {
         let showEasterEggMessageTimeout: NodeJS.Timeout
@@ -23,7 +21,6 @@ export function Nav() {
     }, [showEasterEggMessage])
 
     useEffect(() => {
-        console.log(tooltipInvokedCount)
         if (tooltipInvokedCount > 1 && tooltipInvokedCount <= 4) {
             setShowEasterEggMessage(true)
         }

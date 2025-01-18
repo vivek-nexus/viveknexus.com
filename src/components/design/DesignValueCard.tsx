@@ -17,8 +17,14 @@ export function DesignValueCard({ number, className }: { number: 1 | 2 | 3 | 4, 
         setShowText1(true)
     }
 
+    function handleTouch(e: TouchEvent) {
+        e.preventDefault()
+        setShowText1(showText1 => !showText1)
+        setShowText2(showText2 => !showText2)
+    }
+
     function handleClickOutside(e: MouseEvent) {
-        if (!card.current?.contains(e.target as Node)) {
+        if (card.current && !card.current.contains(e.target as Node)) {
             setShowText1(true)
             setShowText2(false)
         }
@@ -34,17 +40,18 @@ export function DesignValueCard({ number, className }: { number: 1 | 2 | 3 | 4, 
                 return `lg:-rotate-12`
             case 4:
                 return `lg:rotate-12`
-
             default:
                 break
         }
     }
 
-    // For tap outside on touch devices
     useEffect(() => {
-        document.addEventListener("click", handleClickOutside)
+        // React synthetic events don't support passive false, which is needed to call event.preventDefault() to cancel mouse events https://web.dev/articles/mobile-touchandmouse#1_-_clicking_and_tapping_-_the_natural_order_of_things
+        card.current?.addEventListener("touchstart", handleTouch, { passive: false })
+        document.addEventListener("mousedown", handleClickOutside)
         return () => {
-            document.removeEventListener("click", handleClickOutside)
+            card.current?.removeEventListener("touchstart", handleTouch)
+            document.removeEventListener("mousedown", handleClickOutside)
         }
     }, [])
 
@@ -60,12 +67,11 @@ export function DesignValueCard({ number, className }: { number: 1 | 2 | 3 | 4, 
                 backgroundClip: "padding-box, border-box",
             }}
             tabIndex={0}
-            onMouseEnter={handleMouseEnter}
+            onMouseOver={handleMouseEnter}
             onMouseLeave={handleMouseOut}
-            onTouchStart={handleMouseEnter}
-            onTouchEnd={handleMouseOut}
             onFocus={handleMouseEnter}
             onBlur={handleMouseOut}
+            // Touch events added to the ref
             aria-label={`${designValues[number].text1}, ${designValues[number].text2.toLowerCase()}`}
         >
             {showText1 &&

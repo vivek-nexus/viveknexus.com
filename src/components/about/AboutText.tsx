@@ -6,13 +6,13 @@ import {
 } from "@/components/ui/tooltip"
 import { RandomThought } from "./RandomThought"
 import { useState } from "react"
-import { useEasterEgg } from "@/context/EasterEggContext"
+import { useGlobalContext } from "@/context/GlobalContext"
 
 
 
 export function AboutText({ number }: { number: number }) {
     const [isTooltipOpen, setIsTooltipOpen] = useState(false)
-    const { setTooltipInvokedCount } = useEasterEgg()
+    const { setTooltipInvokedCount } = useGlobalContext()
 
     return (
         <p>

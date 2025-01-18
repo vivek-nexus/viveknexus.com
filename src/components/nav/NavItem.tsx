@@ -20,7 +20,6 @@ export function NavItem({ alphabet }: { alphabet: Alphabet }) {
 
     useEffect(() => {
         function handleKeyPress(event: KeyboardEvent) {
-            console.log(isModifierKeyPressed(event))
             if (!isModifierKeyPressed(event)) {
                 const key = event.key.toUpperCase() as Alphabet
                 if (key.toLocaleUpperCase() === alphabet) {

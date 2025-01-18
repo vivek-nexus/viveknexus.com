@@ -3,7 +3,7 @@ import { useEffect, useRef, useState } from "react"
 import { LeftBrain } from "./LeftBrain"
 import { RightBrain } from "./RightBrain"
 import { BackgroundLines } from "../ui/background-lines"
-import { useEasterEgg } from "@/context/EasterEggContext"
+import { useGlobalContext } from "@/context/GlobalContext"
 
 
 export const transitionTween = {
@@ -32,7 +32,7 @@ export function Hero() {
     const [scale, setScale] = useState(1)
     const heroGraphic = useRef<HTMLDivElement>(null)
 
-    const { setShowEasterEggMessage } = useEasterEgg()
+    const { setShowEasterEggMessage } = useGlobalContext()
 
 
     function handleResize() {
