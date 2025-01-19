@@ -15,7 +15,7 @@ export function AboutText({ number }: { number: number }) {
     const { setTooltipInvokedCount } = useGlobalContext()
 
     return (
-        <p>
+        <p className="text-white1">
             {(number === 1) && `Two core aspects of my professional life — design and frontend — I learnt them outside the formal education framework! Most skills are ultimately a combination of experience and persistence, yeah? Purpose and process are both important, but if given a choice, I might show a healthy disrespect for the process.`}
             {(number === 2) && `Stoicism is one value I hold close to heart and decent self awareness is a positive side effect of this! `}
             {(number === 3) &&

@@ -22,11 +22,11 @@ export function About() {
             </div>
             <div className="hidden md:block text-lg lg:text-xl">
                 <div className="grid grid-cols-3 gap-6 mb-6">
-                    <div className="col-span-3 md:col-span-2 h-64 rounded-2xl border border-white3 hover:shadow-whiteGlow2 duration-200 ease-in p-8 flex items-center bg-gradient-to-b from-primaryGreen/25 to-primaryBlue/25">
+                    <div className="col-span-3 md:col-span-2 h-64 rounded-2xl hover:shadow-whiteGlow2 duration-200 ease-in p-8 flex items-center bg-gradient-to-b from-primaryGreen/25 to-primaryBlue/25">
                         <AboutText number={1} />
                     </div>
                     <div
-                        className="relative col-span-3 md:col-span-1 h-64 rounded-2xl border border-white/25 text-lg">
+                        className="relative col-span-3 md:col-span-1 h-64 rounded-2xl text-lg">
                         <DirectionAwareHover imageUrl={"/images/about-me-1.webp"}>
                             <p className="p-4 pb-0 font-bold">Petrol station commissioning</p>
                             <p className="p-4 pt-0 font-medium">Sales Officer at HP</p>
@@ -34,18 +34,18 @@ export function About() {
                     </div>
                 </div>
                 <div className="grid grid-cols-3 gap-6 mb-6">
-                    <div className="col-span-3 md:col-span-1 h-64 rounded-2xl border border-white3 hover:shadow-whiteGlow2 duration-200 ease-in p-8 flex items-center bg-gradient-to-b from-primaryGreen/25 to-primaryBlue/25">
+                    <div className="col-span-3 md:col-span-1 h-64 rounded-2xl hover:shadow-whiteGlow2 duration-200 ease-in p-8 flex items-center bg-gradient-to-b from-primaryGreen/25 to-primaryBlue/25">
                         <AboutText number={2} />
                     </div>
-                    <div className="col-span-3 md:col-span-1 h-64 rounded-2xl border border-white3 hover:shadow-whiteGlow2 duration-200 ease-in bg-gradient-to-b from-primaryGreen/75 to-primaryBlue/75 flex justify-center items-center">
+                    <div className="col-span-3 md:col-span-1 h-64 rounded-2xl hover:shadow-whiteGlow2 duration-200 ease-in bg-gradient-to-b from-primaryGreen/75 to-primaryBlue/75 flex justify-center items-center">
                         <img src="/images/face-caricature.svg" alt="Caricature of my face" />
                     </div>
-                    <div className="col-span-3 md:col-span-1 h-64 rounded-2xl border border-white3 hover:shadow-whiteGlow2 duration-200 ease-in p-8 flex items-center bg-gradient-to-b from-primaryGreen/25 to-primaryBlue/25">
+                    <div className="col-span-3 md:col-span-1 h-64 rounded-2xl hover:shadow-whiteGlow2 duration-200 ease-in p-8 flex items-center bg-gradient-to-b from-primaryGreen/25 to-primaryBlue/25">
                         <AboutText number={3} />
                     </div>
                 </div>
                 <div className="grid grid-cols-3 gap-6">
-                    <div className="col-span-3 md:col-span-1 h-64 rounded-2xl border border-white3 hover:shadow-whiteGlow2 duration-200 ease-in p-8 flex items-center bg-gradient-to-b from-primaryGreen/25 to-primaryBlue/25">
+                    <div className="col-span-3 md:col-span-1 h-64 rounded-2xl hover:shadow-whiteGlow2 duration-200 ease-in p-8 flex items-center bg-gradient-to-b from-primaryGreen/25 to-primaryBlue/25">
                         <AboutText number={4} />
                     </div>
                     <div
