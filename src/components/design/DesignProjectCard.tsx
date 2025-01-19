@@ -71,7 +71,7 @@ export function DesignProjectCard(
                             })}
                         </div>
                         {quote &&
-                            <p className={`${lora.className} italic`}>
+                            <p className={`${lora.className} italic text-shimmer`}>
                                 {`"${quote}"`}
                             </p>
                         }

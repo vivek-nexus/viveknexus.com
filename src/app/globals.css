@@ -29,6 +29,24 @@ html {
     mask-image: radial-gradient(circle, black 50%, transparent 70%, transparent 100%);
 }
 
+.text-shimmer {
+    background-image: linear-gradient(to right, white 0%, white 100%);
+    background-size: 10% 100%;
+    background-clip: text;
+    background-repeat: no-repeat;
+    animation: shimmer linear 4s infinite;
+}
+
+@keyframes shimmer {
+    0% {
+        background-position: -100% top;
+    }
+
+    100% {
+        background-position: 200% top;
+    }
+}
+
 
 /* ANIMATED MESH GRADIENT */
 @keyframes contact-animation {
