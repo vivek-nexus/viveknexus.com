@@ -1,4 +1,4 @@
-import { useGlobalStore } from "@/context/GlobalStore"
+import { useGlobalStore } from "@/stores/GlobalStore"
 import { useState, useEffect } from "react"
 
 export function useIsTouchDevice() {

@@ -2,11 +2,23 @@ import { designProjects } from "@/constants/designProjects"
 import { DesignProjectCard } from "./DesignProjectCard"
 import { DesignValues } from "./DesignValues"
 import { motion } from "motion/react"
+import { useInView } from "react-intersection-observer"
+import { useEffect } from "react"
+import { useGlobalStore } from "@/stores/GlobalStore"
 
 
 export function Design() {
+    const { ref, inView } = useInView({ rootMargin: "0px" })
+    const setActiveSection = useGlobalStore(state => state.setActiveSection)
+
+    useEffect(() => {
+        if (inView) {
+            setActiveSection("D")
+        }
+    }, [inView])
+
     return (
-        <section id="design" className="max-w-[1024px] mx-auto px-6 md:px-4 py-12 md:pt-24 md:pb-12">
+        <section ref={ref} id="design" className="max-w-[1024px] mx-auto px-6 md:px-4 pb-12 md:pb-12">
             <DesignValues />
             <motion.div
                 className="flex flex-col gap-8"

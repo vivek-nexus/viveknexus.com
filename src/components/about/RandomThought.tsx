@@ -1,5 +1,5 @@
 import { randomThoughts } from "@/constants/randomThougts"
-import { useGlobalStore } from "@/context/GlobalStore"
+import { useGlobalStore } from "@/stores/GlobalStore"
 
 export function RandomThought() {
     const tooltipInvokedCount = useGlobalStore(state => state.tooltipInvokedCount)

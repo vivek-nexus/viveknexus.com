@@ -1,9 +1,10 @@
 import { motion } from "motion/react"
-import { useEffect, useRef, useState } from "react"
+import { useCallback, useEffect, useRef, useState } from "react"
 import { LeftBrain } from "./LeftBrain"
 import { RightBrain } from "./RightBrain"
 import { BackgroundLines } from "../ui/background-lines"
-import { useGlobalStore } from "@/context/GlobalStore"
+import { useGlobalStore } from "@/stores/GlobalStore"
+import { useInView } from "react-intersection-observer"
 
 
 export const transitionTween = {
@@ -32,7 +33,8 @@ export function Hero() {
     const [scale, setScale] = useState(1)
     const heroGraphic = useRef<HTMLDivElement>(null)
 
-    const setShowEasterEggMessage = useGlobalStore(state => state.setShowEasterEggMessage)
+    const { ref: inViewRef, inView } = useInView({ rootMargin: "0px" })
+    const { setShowEasterEggMessage, setActiveSection } = useGlobalStore()
 
 
     function handleResize() {
@@ -56,10 +58,26 @@ export function Hero() {
         return () => window.removeEventListener("resize", handleResize)
     }, [])
 
+    // Use `useCallback` so we don't recreate the function on each render
+    const setRefs = useCallback(
+        (node: HTMLDivElement) => {
+            // Ref's from useRef needs to have the node assigned to `current`
+            heroGraphic.current = node
+            // Callback refs, like the one from `useInView`, is a function that takes the node as an argument
+            inViewRef(node)
+        },
+        [inViewRef])
+
+    useEffect(() => {
+        if (inView) {
+            setActiveSection("V")
+        }
+    }, [inView])
+
     return (
         <motion.section
-            ref={heroGraphic}
-            className="max-w-[1440px] mx-auto mt-16 md:mt-24 pb-12 md:pb-24 overflow-x-clip flex flex-col items-center"
+            ref={setRefs}
+            className="max-w-[1440px] mx-auto mt-16 md:mt-24 pb-24 md:pb-48 overflow-x-clip flex flex-col items-center"
             initial={{ opacity: 0 }}
             animate={{
                 opacity: 100,

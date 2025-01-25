@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 :root {
-    --bg-black-1: #101010;
+    --black-1: #101010;
     --white-1: #DFDFDF;
     --white-2: #C0C0C0;
     --white-3: #666666;

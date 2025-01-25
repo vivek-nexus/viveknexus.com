@@ -63,7 +63,7 @@ export function DesignValueCard({ number, className }: { number: 1 | 2 | 3 | 4, 
             style={{
                 // Gradient border
                 border: "solid 1px transparent",
-                backgroundImage: `linear-gradient(180deg, var(--bg-black-1) 0%, color-mix(in oklab, var(--primary-blue), var(--bg-black-1) 85%) 100%), linear-gradient(180deg, var(--primary-green) 0%, var(--primary-blue) 100%)`,
+                backgroundImage: `linear-gradient(180deg, var(--black-1) 0%, color-mix(in oklab, var(--primary-blue), var(--black-1) 85%) 100%), linear-gradient(180deg, var(--primary-green) 0%, var(--primary-blue) 100%)`,
                 backgroundOrigin: "border-box",
                 backgroundClip: "padding-box, border-box",
             }}

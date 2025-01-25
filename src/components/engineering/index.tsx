@@ -3,6 +3,9 @@ import { Space_Mono } from "next/font/google"
 import { EngineeringProjectCard } from "./EngineeringProjectCard"
 import { ShootingStars } from "../ui/shooting-stars"
 import { StarsBackground } from "../ui/stars-background"
+import { useGlobalStore } from "@/stores/GlobalStore"
+import { useEffect } from "react"
+import { useInView } from "react-intersection-observer"
 
 const spaceMono = Space_Mono({
     subsets: ["latin"],
@@ -10,8 +13,18 @@ const spaceMono = Space_Mono({
 })
 
 export function Engineering() {
+    const { ref, inView } = useInView()
+    const setActiveSection = useGlobalStore(state => state.setActiveSection)
+
+    useEffect(() => {
+        if (inView) {
+            setActiveSection("E")
+        }
+    }, [inView])
+
     return (
         <section
+            ref={ref}
             id="engineering"
             className={`relative ${spaceMono.className} py-36 md:py-48 [mask-image:linear-gradient(to_bottom,transparent,white_10%,white_95%,transparent)]`}
         >

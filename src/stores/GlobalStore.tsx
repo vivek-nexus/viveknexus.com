@@ -1,6 +1,6 @@
 import { create } from 'zustand'
 
-type ActiveSection = "V" | "D" | "E" | "A"
+export type ActiveSection = "V" | "D" | "E" | "A" | "R"
 
 // Define the types for the store
 interface GlobalState {

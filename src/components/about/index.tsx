@@ -1,10 +1,27 @@
 import { hexToRgba } from "@/lib/utils"
 import { DirectionAwareHover } from "../ui/direction-aware-hover"
 import { AboutText } from "./AboutText"
+import { useInView } from "react-intersection-observer"
+import { useGlobalStore } from "@/stores/GlobalStore"
+import { useEffect } from "react"
 
 export function About() {
+    const { ref, inView } = useInView()
+    const setActiveSection = useGlobalStore(state => state.setActiveSection)
+
+    useEffect(() => {
+        if (inView) {
+            setActiveSection("A")
+        }
+    }, [inView])
+
+
     return (
-        <section id="about" className="max-w-[1024px] mx-auto px-6 font-extralight py-12 md:py-24 md:pt-12 md:pb-24">
+        <section
+            ref={ref}
+            id="about"
+            className="max-w-[1024px] mx-auto px-6 font-extralight py-12 md:py-24 md:pt-12 md:pb-24"
+        >
             <h2 className="text-5xl md:text-7xl text-center mb-12">About? Me?</h2>
             <div className="md:hidden">
                 <div className="mb-4">

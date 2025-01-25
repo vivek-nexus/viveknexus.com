@@ -2,7 +2,7 @@ import { AnimatePresence, motion } from "motion/react"
 import { transitionSpring, transitionTween } from "../hero"
 import { NavItem } from "./NavItem"
 import { useEffect, useState } from "react"
-import { useGlobalStore } from "@/context/GlobalStore"
+import { useGlobalStore } from "@/stores/GlobalStore"
 
 
 export function Nav() {

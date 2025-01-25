@@ -1,6 +1,6 @@
 "use client"
 
-import { useGlobalStore } from "@/context/GlobalStore"
+import { useGlobalStore } from "@/stores/GlobalStore"
 import { cn } from "@/lib/utils"
 import { Lora } from "next/font/google"
 import React, { useEffect, useState } from "react"

@@ -6,7 +6,7 @@ import {
 } from "@/components/ui/tooltip"
 import { RandomThought } from "./RandomThought"
 import { useState } from "react"
-import { useGlobalStore } from "@/context/GlobalStore"
+import { useGlobalStore } from "@/stores/GlobalStore"
 
 
 
