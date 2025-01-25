@@ -13,7 +13,7 @@ const spaceMono = Space_Mono({
 })
 
 export function Engineering() {
-    const { ref, inView } = useInView()
+    const { ref, inView } = useInView({ threshold: 0.25 })
     const setActiveSection = useGlobalStore(state => state.setActiveSection)
 
     useEffect(() => {

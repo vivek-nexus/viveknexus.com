@@ -8,7 +8,7 @@ import { useGlobalStore } from "@/stores/GlobalStore"
 
 
 export function Design() {
-    const { ref, inView } = useInView({ rootMargin: "0px" })
+    const { ref, inView } = useInView({ threshold: 0.25 })
     const setActiveSection = useGlobalStore(state => state.setActiveSection)
 
     useEffect(() => {

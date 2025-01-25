@@ -6,7 +6,7 @@ import { useGlobalStore } from "@/stores/GlobalStore"
 import { useEffect } from "react"
 
 export function About() {
-    const { ref, inView } = useInView()
+    const { ref, inView } = useInView({ threshold: 0.5 })
     const setActiveSection = useGlobalStore(state => state.setActiveSection)
 
     useEffect(() => {

@@ -33,7 +33,7 @@ export function Hero() {
     const [scale, setScale] = useState(1)
     const heroGraphic = useRef<HTMLDivElement>(null)
 
-    const { ref: inViewRef, inView } = useInView({ rootMargin: "0px" })
+    const { ref: inViewRef, inView } = useInView({ threshold: 0.75 })
     const { setShowEasterEggMessage, setActiveSection } = useGlobalStore()
 
 
@@ -77,7 +77,7 @@ export function Hero() {
     return (
         <motion.section
             ref={setRefs}
-            className="max-w-[1440px] mx-auto mt-16 md:mt-24 pb-24 md:pb-48 overflow-x-clip flex flex-col items-center"
+            className="max-w-[1440px] mx-auto mt-16 md:mt-24 pb-12 md:pb-24 overflow-x-clip flex flex-col items-center"
             initial={{ opacity: 0 }}
             animate={{
                 opacity: 100,
