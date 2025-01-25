@@ -1,4 +1,5 @@
 import { designValues } from "@/constants/designValues"
+import { hexToRgba } from "@/lib/utils"
 import { motion } from "motion/react"
 import { useEffect, useRef, useState } from "react"
 
@@ -62,7 +63,7 @@ export function DesignValueCard({ number, className }: { number: 1 | 2 | 3 | 4, 
             style={{
                 // Gradient border
                 border: "solid 1px transparent",
-                backgroundImage: "linear-gradient(180deg, #0C0803 0%, #262525 100%), linear-gradient(180deg, var(--primary-green) 0%, #CCCBCB 100%)",
+                backgroundImage: `linear-gradient(180deg, var(--bg-black-1) 0%, color-mix(in oklab, var(--primary-blue), var(--bg-black-1) 85%) 100%), linear-gradient(180deg, var(--primary-green) 0%, var(--primary-blue) 100%)`,
                 backgroundOrigin: "border-box",
                 backgroundClip: "padding-box, border-box",
             }}
@@ -95,7 +96,7 @@ export function DesignValueCard({ number, className }: { number: 1 | 2 | 3 | 4, 
             <div
                 className="absolute -bottom-14 lg:-bottom-16 w-full h-1/4 rounded-2xl blur-md -z-10 pointer-events-none"
                 style={{
-                    background: "linear-gradient(180deg, #252424 5.12%, #101010 100%)",
+                    background: `linear-gradient(180deg, ${hexToRgba("--primary-blue", 0.15)} 5.12%, #101010 100%)`
                 }}
             >
             </div>

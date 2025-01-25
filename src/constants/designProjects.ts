@@ -1,6 +1,6 @@
 export const designProjects = [
     {
-        gradientColourHex: "803B85",
+        gradientColourHex: "820678",
         gradientStartOpacity: 75,
         title: "Share financial data",
         description: "Enabling Indian citizens to take control of how they share financial data. Consented data sharing powered by the Account Aggregator framework introduced by the Reserve Bank of India.",

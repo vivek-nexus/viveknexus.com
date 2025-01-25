@@ -26,14 +26,14 @@ export function DesignValues() {
                     className="flex-shrink-0 order-2 lg:order-1"
                 />
                 <div className="relative basis-full lg:basis-auto order-1 lg:order-2">
-                    <div className="absolute left-1/2 -translate-x-1/2 mx-auto mt-20 w-[50%] lg:w-[125%] h-8 bg-white/25 blur-[24px]" style={{ borderRadius: "100px/25px" }}>
+                    <div className="absolute left-1/2 -translate-x-1/2 mx-auto mt-20 w-[50%] lg:w-[125%] h-8 bg-primaryBlue/50 blur-[24px]" style={{ borderRadius: "100px/25px" }}>
                     </div>
                     <h2
-                        className="font-extrabold text-5xl lg:text-7xl text-black text-center pb-2 bg-gradient-to-b from-primaryGreen from-30% to-white2"
+                        className="font-extrabold text-5xl lg:text-7xl text-black text-center pb-2 bg-gradient-to-b from-primaryGreen from-30% to-primaryBlue"
                         style={{
                             WebkitBackgroundClip: "text",
                             WebkitTextStroke: "4px transparent",
-                            textShadow: "0px 0px 36px rgba(255, 255, 255, 0.25)"
+                            textShadow: "0px 0px 36px var(--primary-blue)"
                         }}
                     >
                         Design
