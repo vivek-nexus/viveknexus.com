@@ -1,8 +1,8 @@
 import { useGlobalStore } from "@/stores/GlobalStore"
-import { useState, useEffect } from "react"
+import { useEffect } from "react"
 
 export function useIsTouchDevice() {
-    const { isTouchDevice, setIsTouchDevice } = useGlobalStore()
+    const { setIsTouchDevice } = useGlobalStore()
 
     useEffect(() => {
         // Create a media query to check if the device supports touch

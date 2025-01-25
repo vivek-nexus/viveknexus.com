@@ -1,6 +1,6 @@
 import { StatProps } from "./EngineeringProjectCard"
 
-export function Stat({ index, name, value, iconURI }: StatProps & { index: number }) {
+export function Stat({ name, value, iconURI }: StatProps & { index: number }) {
     return (
         <div
             className="pl-4 border-l border-white3"
