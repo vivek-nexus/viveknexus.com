@@ -1,3 +1,4 @@
+import { hexToRgba } from "@/lib/utils"
 import { DirectionAwareHover } from "../ui/direction-aware-hover"
 import { AboutText } from "./AboutText"
 
@@ -22,7 +23,7 @@ export function About() {
             </div>
             <div className="hidden md:block text-lg lg:text-xl">
                 <div className="grid grid-cols-3 gap-6 mb-6">
-                    <div className="col-span-3 md:col-span-2 h-64 rounded-2xl hover:shadow-whiteGlow2 duration-200 ease-in p-8 flex items-center bg-gradient-to-b from-primaryGreen/25 to-primaryBlue/25">
+                    <div className="col-span-3 md:col-span-2 h-64 rounded-2xl hover:shadow-whiteGlow2 duration-200 ease-in p-8 bg-gradient-to-tl from-primaryBlue/40 to-primaryBlue/0 border border-white3 flex items-center">
                         <AboutText number={1} />
                     </div>
                     <div
@@ -34,18 +35,22 @@ export function About() {
                     </div>
                 </div>
                 <div className="grid grid-cols-3 gap-6 mb-6">
-                    <div className="col-span-3 md:col-span-1 h-64 rounded-2xl hover:shadow-whiteGlow2 duration-200 ease-in p-8 flex items-center bg-gradient-to-b from-primaryGreen/25 to-primaryBlue/25">
+                    <div className="col-span-3 md:col-span-1 h-64 rounded-2xl hover:shadow-whiteGlow2 duration-200 ease-in p-8 bg-gradient-to-l from-primaryBlue/40 to-primaryBlue/0 border border-white3 flex items-center">
                         <AboutText number={2} />
                     </div>
-                    <div className="col-span-3 md:col-span-1 h-64 rounded-2xl hover:shadow-whiteGlow2 duration-200 ease-in bg-gradient-to-b from-primaryGreen/75 to-primaryBlue/75 flex justify-center items-center">
+                    <div className="col-span-3 md:col-span-1 h-64 rounded-2xl hover:shadow-whiteGlow2 duration-200 ease-in border border-white3 flex justify-center items-center"
+                        style={{
+                            background: `radial-gradient(${hexToRgba("--primary-green", 0.6)} 25%, ${hexToRgba("--primary-blue", 0.5)})`
+                        }}
+                    >
                         <img src="/images/face-caricature.svg" alt="Caricature of my face" />
                     </div>
-                    <div className="col-span-3 md:col-span-1 h-64 rounded-2xl hover:shadow-whiteGlow2 duration-200 ease-in p-8 flex items-center bg-gradient-to-b from-primaryGreen/25 to-primaryBlue/25">
+                    <div className="col-span-3 md:col-span-1 h-64 rounded-2xl hover:shadow-whiteGlow2 duration-200 ease-in p-8 bg-gradient-to-r from-primaryBlue/40 to-primaryBlue/0 border border-white3 flex items-center">
                         <AboutText number={3} />
                     </div>
                 </div>
                 <div className="grid grid-cols-3 gap-6">
-                    <div className="col-span-3 md:col-span-1 h-64 rounded-2xl hover:shadow-whiteGlow2 duration-200 ease-in p-8 flex items-center bg-gradient-to-b from-primaryGreen/25 to-primaryBlue/25">
+                    <div className="col-span-3 md:col-span-1 h-64 rounded-2xl hover:shadow-whiteGlow2 duration-200 ease-in p-8 bg-gradient-to-bl from-primaryBlue/40 to-primaryBlue/0 border border-white3 flex items-center">
                         <AboutText number={4} />
                     </div>
                     <div

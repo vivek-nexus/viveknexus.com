@@ -27,7 +27,7 @@ export function Greeting({ userIp }: { userIp: string }) {
                 }
             }}
         >
-            <p className="mb-4 text-sm md:text-2xl">
+            <p className="mb-4 text-sm md:text-2xl text-orange1">
                 Hello human at&nbsp;
                 <TooltipProvider>
                     <Tooltip delayDuration={100}>
