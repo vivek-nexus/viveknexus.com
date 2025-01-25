@@ -6,13 +6,13 @@ import {
 } from "@/components/ui/tooltip"
 import { RandomThought } from "./RandomThought"
 import { useState } from "react"
-import { useGlobalContext } from "@/context/GlobalContext"
+import { useGlobalStore } from "@/context/GlobalStore"
 
 
 
 export function AboutText({ number }: { number: number }) {
     const [isTooltipOpen, setIsTooltipOpen] = useState(false)
-    const { setTooltipInvokedCount } = useGlobalContext()
+    const setTooltipInvokedCount = useGlobalStore(state => state.setTooltipInvokedCount)
 
     return (
         <p className="text-white1">

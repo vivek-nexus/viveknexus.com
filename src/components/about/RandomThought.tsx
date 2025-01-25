@@ -1,8 +1,8 @@
 import { randomThoughts } from "@/constants/randomThougts"
-import { useGlobalContext } from "@/context/GlobalContext"
+import { useGlobalStore } from "@/context/GlobalStore"
 
 export function RandomThought() {
-    const { tooltipInvokedCount } = useGlobalContext()
+    const tooltipInvokedCount = useGlobalStore(state => state.tooltipInvokedCount)
     return (
         <p className="max-w-[25vw] leading-normal" >
             {randomThoughts[(tooltipInvokedCount % 4)]}

@@ -2,7 +2,6 @@ import type { Metadata } from "next"
 import { SUSE } from "next/font/google"
 import "./globals.css"
 import Script from "next/script"
-import { GlobalContextProvider } from "@/context/GlobalContext"
 
 const suse = SUSE({
   subsets: ["latin"]
@@ -38,9 +37,8 @@ export default function RootLayout({
   children: React.ReactNode
 }>) {
   return (
-    <GlobalContextProvider>
-      <html lang="en">
-        <Script id="mouseflow-script">{`
+    <html lang="en">
+      <Script id="mouseflow-script">{`
         window._mfq = window._mfq || [];
         (function() {
           var mf = document.createElement("script");
@@ -49,12 +47,11 @@ export default function RootLayout({
           document.getElementsByTagName("head")[0].appendChild(mf);
         })();
       `}</Script>
-        <body
-          className={`${suse.className} antialiased bg-black1 text-white2`}
-        >
-          {children}
-        </body>
-      </html>
-    </GlobalContextProvider>
+      <body
+        className={`${suse.className} antialiased bg-black1 text-white2`}
+      >
+        {children}
+      </body>
+    </html>
   )
 }

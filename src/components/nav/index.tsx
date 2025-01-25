@@ -1,13 +1,13 @@
 import { AnimatePresence, motion } from "motion/react"
 import { transitionSpring, transitionTween } from "../hero"
 import { NavItem } from "./NavItem"
-import { useGlobalContext } from "@/context/GlobalContext"
 import { useEffect, useState } from "react"
+import { useGlobalStore } from "@/context/GlobalStore"
 
 
 export function Nav() {
     const [animationName, setAnimationName] = useState("firstAnimation")
-    const { showEasterEggMessage, setShowEasterEggMessage, tooltipInvokedCount } = useGlobalContext()
+    const { showEasterEggMessage, setShowEasterEggMessage, tooltipInvokedCount } = useGlobalStore()
 
     useEffect(() => {
         let showEasterEggMessageTimeout: NodeJS.Timeout

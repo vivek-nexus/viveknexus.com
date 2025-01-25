@@ -10,6 +10,7 @@ import { Engineering } from "@/components/engineering"
 import { About } from "@/components/about"
 import { Testimonials } from "@/components/testimonails"
 import { Nav } from "@/components/nav"
+import { useIsTouchDevice } from "@/hooks/useIsTouchDevice"
 
 export default function Home() {
   const [showGreeting, setShowGreeting] = useState(false)
@@ -21,6 +22,8 @@ export default function Home() {
   let showHeroTimeout: NodeJS.Timeout
   let showPageTimeout: NodeJS.Timeout
   let scrollToAnchorTimeout: NodeJS.Timeout
+
+  useIsTouchDevice()
 
   useEffect(() => {
     fetch("https://render-express-server-q222.onrender.com/ip")

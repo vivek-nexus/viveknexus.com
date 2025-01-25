@@ -1,7 +1,8 @@
+import { useGlobalStore } from "@/context/GlobalStore"
 import { useState, useEffect } from "react"
 
 export function useIsTouchDevice() {
-    const [isTouchDevice, setIsTouchDevice] = useState(false)
+    const { isTouchDevice, setIsTouchDevice } = useGlobalStore()
 
     useEffect(() => {
         // Create a media query to check if the device supports touch
@@ -11,7 +12,7 @@ export function useIsTouchDevice() {
         setIsTouchDevice(mediaQuery.matches)
 
         // Define a listener to update the state if the media query changes
-        const handleMediaChange = (event: MediaQueryListEvent) => {
+        function handleMediaChange(event: MediaQueryListEvent) {
             setIsTouchDevice(event.matches)
         }
 
@@ -23,6 +24,4 @@ export function useIsTouchDevice() {
             mediaQuery.removeEventListener("change", handleMediaChange)
         }
     }, [])
-
-    return isTouchDevice
 }

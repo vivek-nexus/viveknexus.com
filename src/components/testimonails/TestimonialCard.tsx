@@ -1,6 +1,6 @@
 "use client"
 
-import { useGlobalContext } from "@/context/GlobalContext"
+import { useGlobalStore } from "@/context/GlobalStore"
 import { cn } from "@/lib/utils"
 import { Lora } from "next/font/google"
 import React, { useEffect, useState } from "react"
@@ -30,7 +30,7 @@ export const TestimonialCard = ({
     const containerRef = React.useRef<HTMLDivElement>(null)
     const scrollerRef = React.useRef<HTMLUListElement>(null)
     const [start, setStart] = useState(false)
-    const { isTouchDevice } = useGlobalContext()
+    const isTouchDevice = useGlobalStore(state => state.isTouchDevice)
 
     useEffect(() => {
         if (isTouchDevice) {
