@@ -2,7 +2,7 @@ import { navDetails } from "@/constants/navDetails"
 import { ActiveSection, useGlobalStore } from "@/stores/GlobalStore"
 import { Space_Mono } from "next/font/google"
 import { useRouter } from "next/navigation"
-import { useEffect } from "react"
+import { useEffect, useRef } from "react"
 
 const spaceMono = Space_Mono({
     subsets: ["latin"],
@@ -11,6 +11,7 @@ const spaceMono = Space_Mono({
 
 
 export function NavItem({ alphabet }: { alphabet: ActiveSection }) {
+    const key = useRef<HTMLAnchorElement>(null)
     const router = useRouter()
     const activeSection = useGlobalStore(state => state.activeSection)
 
@@ -22,17 +23,13 @@ export function NavItem({ alphabet }: { alphabet: ActiveSection }) {
     useEffect(() => {
         function handleKeyPress(event: KeyboardEvent) {
             if (!isModifierKeyPressed(event)) {
-                const key = event.key.toUpperCase() as ActiveSection
-                if (key.toLocaleUpperCase() === alphabet) {
-                    if (alphabet === "R") {
-                        window.open(navDetails[alphabet].URI, "_blank")
-                    }
-                    else if (alphabet === "V") {
-                        window.scrollTo(0, 0)
-                    }
-                    else {
-                        router.push(navDetails[alphabet].URI)
-                    }
+                const pressedKey = event.key.toUpperCase() as ActiveSection
+                if (pressedKey.toLocaleUpperCase() === alphabet) {
+                    key.current?.click()
+                    key.current?.setAttribute("data-pressed", "true")
+                    setTimeout(() => {
+                        key.current?.removeAttribute("data-pressed")
+                    }, 200)
                 }
             }
         }
@@ -46,11 +43,14 @@ export function NavItem({ alphabet }: { alphabet: ActiveSection }) {
 
     return (
         <li>
-            <a href={navDetails[alphabet].URI} target={alphabet === "R" ? "_blank" : undefined}
-                className="w-14 md:w-20 h-14 md:h-20 flex flex-col gap-1 justify-center items-center"
+            <a
+                ref={key}
+                href={navDetails[alphabet].URI} target={alphabet === "R" ? "_blank" : undefined}
+                className="group w-14 md:w-20 h-14 md:h-20 flex flex-col gap-1 justify-center items-center"
             >
+                {/* https://codepen.io/gymbry/pen/KWwepx */}
                 <span
-                    className={`border border-white2 w-5 h-5 rounded text-xs font-bold ${spaceMono.className} flex justify-center items-center transition-all duration-200 delay-100 ${activeSection === alphabet ? `bg-white2 text-black1` : `bg-transparent text-white2`}`}
+                    className={`relative group-active:top-[0.2em] group-data-[pressed=true]:top-[0.2em] border border-white2 w-5 h-5 rounded text-xs font-bold ${spaceMono.className} flex justify-center items-center transition-all duration-200 delay-100 ${activeSection === alphabet ? `bg-white2 text-black1` : `bg-transparent text-white2`}`}
                 >
                     {alphabet.toLocaleUpperCase()}
                 </span>

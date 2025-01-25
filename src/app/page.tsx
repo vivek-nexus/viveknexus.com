@@ -13,6 +13,7 @@ import { Nav } from "@/components/nav"
 import { useIsTouchDevice } from "@/hooks/useIsTouchDevice"
 
 export default function Home() {
+  const [isLoading, setIsLoading] = useState(true)
   const [showGreeting, setShowGreeting] = useState(false)
   const [showHero, setShowHero] = useState(false)
   const [showPage, setShowPage] = useState(false)
@@ -38,6 +39,7 @@ export default function Home() {
         console.error(err)
       })
       .finally(() => {
+        setIsLoading(false)
         hideGreetingTimeout = setTimeout(() => {
           setShowGreeting(false)
         }, 3500)
@@ -86,6 +88,12 @@ export default function Home() {
           Skip to navigation {!showPage && `(Navigation available after opening animations)`}
         </button>
       </div>
+      {isLoading &&
+        <div className="w-dvw h-dvh flex justify-center items-center">
+          {/* https://github.com/n3r4zzurr0/svg-spinners */}
+          <img src="/icons/loader.svg" alt="" className="w-12 h-auto" />
+        </div>
+      }
       {showHero && <Nav />}
       <main>
         <AnimatePresence>

@@ -37,6 +37,10 @@ html {
     animation: shimmer linear 4s infinite;
 }
 
+.photo-vignette {
+    mask-image: linear-gradient(to bottom, transparent, white 20%, white 80%, transparent);
+}
+
 @keyframes shimmer {
     0% {
         background-position: -100% top;

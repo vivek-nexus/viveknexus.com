@@ -1,7 +1,7 @@
 export const engineeringProjects = [
     {
         title: "TranscripTonic",
-        description: "Simple Google Meet transcripts. Privacy focussed open source Chrome extension.",
+        description: "Simple Google Meet transcripts. Privacy focused open source Chrome extension.",
         repoLink: "https://github.com/vivek-nexus/transcriptonic",
         stats: [
             {

@@ -46,7 +46,11 @@ export default function RootLayout({
           mf.src = "//cdn.mouseflow.com/projects/d650c614-2064-44cc-804a-54644c37dd52.js";
           document.getElementsByTagName("head")[0].appendChild(mf);
         })();
-      `}</Script>
+      `}
+      </Script>
+      <head>
+        <link rel="preload" as="image" href="/images/background-grid.svg" />
+      </head>
       <body
         className={`${suse.className} antialiased bg-black1 text-white2`}
       >
