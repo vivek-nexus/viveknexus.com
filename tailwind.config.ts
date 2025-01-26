@@ -17,9 +17,9 @@ export default {
         white3: "#666666",
         primaryGreen: "#2ED1A0",
         primaryBlue: "#0E5EDF",
-        orange1: "#ff8770",
+        orange1: "#FF8770",
         orange2: "#FF9326",
-        purple1: "#c550c9"
+        purple1: "#803B85"
       },
       backgroundImage: {
         "backgroundGrid": "url('/images/background-grid.svg')"
