@@ -28,10 +28,12 @@ const graphicHeight = 480
 
 export function Hero() {
     const [animationName, setAnimationName] = useState("firstAnimation")
+    const [isAnimationComplete, setIsAnimationComplete] = useState(false)
     const [timeStamp, setTimeStamp] = useState(Date.now())
     const [isLandscape, setIsLandscape] = useState(true)
     const [scale, setScale] = useState(1)
     const heroGraphic = useRef<HTMLDivElement>(null)
+
 
     const { ref: inViewRef, inView } = useInView({ threshold: 0.75 })
     const { setShowEasterEggMessage, setActiveSection } = useGlobalStore()
@@ -44,7 +46,7 @@ export function Hero() {
                 setIsLandscape(true)
                 setScale(heroGraphic.current?.clientWidth / landscapeGraphicWidth)
             }
-            // Potrait orientations
+            // Portrait orientations
             else {
                 setIsLandscape(false)
                 setScale(heroGraphic.current?.clientWidth / portraitGraphicWidth)
@@ -52,11 +54,19 @@ export function Hero() {
         }
     }
 
+    function handleBrainClick() {
+        setTimeStamp(Date.now())
+        setAnimationName("firstAnimation")
+        setShowEasterEggMessage(true)
+        setIsAnimationComplete(false)
+    }
+
     useEffect(() => {
         handleResize()
         window.addEventListener("resize", handleResize)
         return () => window.removeEventListener("resize", handleResize)
     }, [])
+
 
     // Use `useCallback` so we don't recreate the function on each render
     const setRefs = useCallback(
@@ -124,41 +134,14 @@ export function Hero() {
                         if (animationName === "firstAnimation") {
                             setAnimationName("secondAnimation")
                         }
+                        if (animationName === "secondAnimation") {
+                            setIsAnimationComplete(true)
+                        }
                     }}
                 >
                     <BackgroundLines className="absolute w-full h-full">
                         <></>
                     </BackgroundLines>
-                    {/* LINE */}
-                    <motion.hr
-                        className="absolute top-1/2 left-1/2"
-                        initial={{
-                            backgroundColor: "rgba(255,255,255,0)",
-                            x: "-50%",
-                            y: "-50%",
-                            width: "50vw",
-                            opacity: 0
-                        }}
-                        animate={animationName}
-                        variants={{
-                            firstAnimation: {
-                                backgroundColor: "rgba(255,255,255,0.5)",
-                                x: "-50%",
-                                y: "-50%",
-                                width: "5vw",
-                                opacity: 1,
-                                transition: transitionTween,
-                            },
-                            secondAnimation: {
-                                backgroundColor: "rgba(255,255,255,0.75)",
-                                x: "-50%",
-                                y: "-50%",
-                                width: 0,
-                                opacity: 1,
-                                transition: transitionSpring
-                            },
-                        }}
-                    />
                     {/* ENLIGHTENED BALL*/}
                     <motion.div
                         className="absolute top-1/2 left-1/2 w-7 h-7"
@@ -196,7 +179,7 @@ export function Hero() {
                     <div className="relative col-span-1">
                         <motion.div
                             className="absolute right-0 top-1/2 cursor-pointer"
-                            initial={{ x: -540, y: "-50%", opacity: 0 }}
+                            initial={{ x: -400, y: "-50%", opacity: 0.9 }}
                             animate={animationName}
                             variants={{
                                 firstAnimation: {
@@ -210,22 +193,18 @@ export function Hero() {
                                     transition: transitionSpring,
                                 },
                             }}
-                            onClick={() => {
-                                setTimeStamp(Date.now())
-                                setAnimationName("firstAnimation")
-                                setShowEasterEggMessage(true)
-                            }}
+                            onClick={handleBrainClick}
                         >
-                            <LeftBrain />
+                            <LeftBrain isAnimationComplete={isAnimationComplete} />
                         </motion.div>
                         <motion.h2
                             className="text-white1 text-right text-[64px] absolute right-12 top-1/2"
-                            initial={{ x: -780, y: "-50%", opacity: 0 }}
+                            initial={{ x: -200, y: "-50%", opacity: 0 }}
                             animate={animationName}
                             variants={{
                                 firstAnimation: {
-                                    x: -100,
-                                    opacity: 1,
+                                    x: -150,
+                                    opacity: 0.01,
                                     transition: transitionTween,
                                 },
                                 secondAnimation: {
@@ -242,7 +221,7 @@ export function Hero() {
                     <div className="relative col-span-1">
                         <motion.div
                             className="absolute left-0 top-1/2 cursor-pointer"
-                            initial={{ x: 540, y: "-50%", scaleX: -1, opacity: 0 }}
+                            initial={{ x: 400, y: "-50%", opacity: 0.9 }}
                             animate={animationName}
                             variants={{
                                 firstAnimation: {
@@ -256,22 +235,18 @@ export function Hero() {
                                     transition: transitionSpring,
                                 },
                             }}
-                            onClick={() => {
-                                setTimeStamp(Date.now())
-                                setAnimationName("firstAnimation")
-                                setShowEasterEggMessage(true)
-                            }}
+                            onClick={handleBrainClick}
                         >
-                            <RightBrain />
+                            <RightBrain isAnimationComplete={isAnimationComplete} />
                         </motion.div>
                         <motion.h2
                             className="text-white1 text-left text-[64px] absolute left-12 top-1/2"
-                            initial={{ x: 780, y: "-50%", opacity: 0 }}
+                            initial={{ x: 200, y: "-50%", opacity: 0 }}
                             animate={animationName}
                             variants={{
                                 firstAnimation: {
-                                    x: 100,
-                                    opacity: 1,
+                                    x: 150,
+                                    opacity: 0.01,
                                     transition: transitionTween,
                                 },
                                 secondAnimation: {

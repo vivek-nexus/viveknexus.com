@@ -38,7 +38,12 @@ html {
 }
 
 .photo-vignette {
-    mask-image: linear-gradient(to bottom, transparent, white 20%, white 80%, transparent);
+    mask-image:
+        linear-gradient(to bottom, transparent, white 7%),
+        linear-gradient(to top, transparent, white 7%),
+        linear-gradient(to right, transparent, white 7%),
+        linear-gradient(to left, transparent, white 7%);
+    mask-composite: intersect;
 }
 
 @keyframes shimmer {
