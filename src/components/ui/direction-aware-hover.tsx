@@ -79,6 +79,7 @@ export const DirectionAwareHover = ({
         >
             <AnimatePresence mode="wait">
                 <motion.div
+                    role="tooltip"
                     tabIndex={0}
                     onMouseEnter={handleMouseEnter}
                     onFocus={handleFocus}

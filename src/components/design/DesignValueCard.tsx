@@ -67,6 +67,7 @@ export function DesignValueCard({ number, className }: { number: 1 | 2 | 3 | 4, 
                 backgroundOrigin: "border-box",
                 backgroundClip: "padding-box, border-box",
             }}
+            role="tooltip"
             tabIndex={0}
             onMouseOver={handleMouseEnter}
             onMouseLeave={handleMouseOut}

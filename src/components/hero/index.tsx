@@ -1,7 +1,7 @@
 import { motion } from "motion/react"
 import { useCallback, useEffect, useRef, useState } from "react"
-import { LeftBrain } from "./LeftBrain"
-import { RightBrain } from "./RightBrain"
+// import { LeftBrain } from "./LeftBrain"
+// import { RightBrain } from "./RightBrain"
 import { BackgroundLines } from "../ui/background-lines"
 import { useGlobalStore } from "@/stores/GlobalStore"
 import { useInView } from "react-intersection-observer"
@@ -23,12 +23,12 @@ export const transitionSpring = {
 
 const landscapeGraphicWidth = 1440
 const portraitGraphicWidth = 900
-const graphicHeight = 480
+const graphicHeight = 540
 
 
 export function Hero() {
     const [animationName, setAnimationName] = useState("firstAnimation")
-    const [isAnimationComplete, setIsAnimationComplete] = useState(false)
+    // const [isAnimationComplete, setIsAnimationComplete] = useState(false)
     const [timeStamp, setTimeStamp] = useState(Date.now())
     const [isLandscape, setIsLandscape] = useState(true)
     const [scale, setScale] = useState(1)
@@ -58,7 +58,7 @@ export function Hero() {
         setTimeStamp(Date.now())
         setAnimationName("firstAnimation")
         setShowEasterEggMessage(true)
-        setIsAnimationComplete(false)
+        // setIsAnimationComplete(false)
     }
 
     useEffect(() => {
@@ -122,11 +122,11 @@ export function Hero() {
                     animate={animationName}
                     variants={{
                         firstAnimation: {
-                            background: "radial-gradient(41.02% 54.97% at 50% 50%, #222222 14.36%, #101010 60.9%)",
+                            background: "radial-gradient(41.02% 54.97% at 50% 50%, #111111 14.36%, #101010 60.9%)",
                             transition: transitionTween,
                         },
                         secondAnimation: {
-                            background: "radial-gradient(41.02% 54.97% at 50% 50%, #555555 10.36%, #101010 60.9%)",
+                            background: "radial-gradient(41.02% 54.97% at 50% 50%, #333333 10.36%, #101010 60.9%)",
                             transition: transitionSpring,
                         },
                     }}
@@ -135,18 +135,18 @@ export function Hero() {
                             setAnimationName("secondAnimation")
                         }
                         if (animationName === "secondAnimation") {
-                            setIsAnimationComplete(true)
+                            // setIsAnimationComplete(true)
                         }
                     }}
                 >
-                    <BackgroundLines className="absolute w-full h-full">
+                    <BackgroundLines className="absolute w-full h-full hero-mask">
                         <></>
                     </BackgroundLines>
                     {/* ENLIGHTENED BALL*/}
                     <motion.div
                         className="absolute top-1/2 left-1/2 w-7 h-7"
                         style={{
-                            boxShadow: "0px 0px 108px 108px rgba(255, 255, 255, 0.25)",
+                            boxShadow: "0px 0px 64px 64px rgba(255, 255, 255, 0.25)",
                             filter: "blur(8px)"
                         }}
                         initial={{
@@ -165,7 +165,7 @@ export function Hero() {
                                 transition: transitionTween,
                             },
                             secondAnimation: {
-                                backgroundColor: "rgba(255,255,255,0.75)",
+                                backgroundColor: "rgba(255,255,255,0.5)",
                                 x: "-50%",
                                 y: "-50%",
                                 display: "block",
@@ -174,17 +174,38 @@ export function Hero() {
                         }}
                     >
                     </motion.div>
-                    {/* TODO: Revisit brain half colours */}
+                    {/* NAME */}
+                    <motion.div
+                        className="absolute left-1/2 -translate-x-1/2 text-gradient opacity-25"
+                        initial={{ top: "0%", opacity: 0 }}
+                        animate={animationName}
+                        variants={{
+                            firstAnimation: {
+                                top: "5%",
+                                opacity: 0.01,
+                                transition: transitionTween,
+                            },
+                            secondAnimation: {
+                                top: "10%",
+                                opacity: 1,
+                                transition: transitionSpring,
+                            },
+                        }}
+                    >
+                        <h1 className="text-[108px] text-center font-bold bg-gradient-to-b from-white3 to-transparent to-65% text-gradient">
+                            Vivek G
+                        </h1>
+                    </motion.div>
                     {/* LEFT BRAIN CONTAINER */}
                     <div className="relative col-span-1">
                         <motion.div
                             className="absolute right-0 top-1/2 cursor-pointer"
-                            initial={{ x: -400, y: "-50%", opacity: 0.9 }}
+                            initial={{ x: -400, y: "-50%", opacity: 0.1 }}
                             animate={animationName}
                             variants={{
                                 firstAnimation: {
                                     x: -50,
-                                    opacity: 1,
+                                    opacity: 0.9,
                                     transition: transitionTween,
                                 },
                                 secondAnimation: {
@@ -195,11 +216,12 @@ export function Hero() {
                             }}
                             onClick={handleBrainClick}
                         >
-                            <LeftBrain isAnimationComplete={isAnimationComplete} />
+                            {/* <LeftBrain isAnimationComplete={isAnimationComplete} /> */}
+                            <img src="/images/brain-left.svg" alt="" />
                         </motion.div>
                         <motion.h2
-                            className="text-white1 text-right text-[64px] absolute right-12 top-1/2"
-                            initial={{ x: -200, y: "-50%", opacity: 0 }}
+                            className="text-white1 text-right text-[48px] font-normal absolute right-12 top-1/2"
+                            initial={{ x: -300, y: "-50%", opacity: 0 }}
                             animate={animationName}
                             variants={{
                                 firstAnimation: {
@@ -208,7 +230,7 @@ export function Hero() {
                                     transition: transitionTween,
                                 },
                                 secondAnimation: {
-                                    x: 0,
+                                    x: -25,
                                     opacity: 1,
                                     transition: transitionSpring,
                                 },
@@ -221,12 +243,12 @@ export function Hero() {
                     <div className="relative col-span-1">
                         <motion.div
                             className="absolute left-0 top-1/2 cursor-pointer"
-                            initial={{ x: 400, y: "-50%", opacity: 0.9 }}
+                            initial={{ x: 400, y: "-50%", opacity: 0.1 }}
                             animate={animationName}
                             variants={{
                                 firstAnimation: {
                                     x: 50,
-                                    opacity: 1,
+                                    opacity: 0.9,
                                     transition: transitionTween,
                                 },
                                 secondAnimation: {
@@ -237,11 +259,12 @@ export function Hero() {
                             }}
                             onClick={handleBrainClick}
                         >
-                            <RightBrain isAnimationComplete={isAnimationComplete} />
+                            <img src="/images/brain-right.svg" alt="" />
+                            {/* <RightBrain isAnimationComplete={isAnimationComplete} /> */}
                         </motion.div>
                         <motion.h2
-                            className="text-white1 text-left text-[64px] absolute left-12 top-1/2"
-                            initial={{ x: 200, y: "-50%", opacity: 0 }}
+                            className="text-white1 text-left text-[48px] font-normal absolute left-12 top-1/2"
+                            initial={{ x: 300, y: "-50%", opacity: 0 }}
                             animate={animationName}
                             variants={{
                                 firstAnimation: {
@@ -250,7 +273,7 @@ export function Hero() {
                                     transition: transitionTween,
                                 },
                                 secondAnimation: {
-                                    x: 0,
+                                    x: 25,
                                     opacity: 1,
                                     transition: transitionSpring,
                                 },
@@ -264,7 +287,7 @@ export function Hero() {
             {/* TITLE */}
             <motion.div
                 key={scale}
-                className="flex gap-4 justify-center items-center"
+                className="-mt-12 flex gap-4 justify-center items-center"
                 initial={{ opacity: 0 }}
                 animate={animationName}
                 variants={{

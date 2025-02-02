@@ -29,6 +29,11 @@ html {
     mask-image: radial-gradient(circle, black 50%, transparent 70%, transparent 100%);
 }
 
+.hero-mask {
+    mask-image: radial-gradient(ellipse, transparent 15%, white);
+}
+
+
 .text-shimmer {
     background-image: linear-gradient(to right, white 0%, white 100%);
     background-size: 10% 100%;
@@ -45,6 +50,7 @@ html {
         linear-gradient(to left, transparent, white 7%);
     mask-composite: intersect;
 }
+
 
 @keyframes shimmer {
     0% {

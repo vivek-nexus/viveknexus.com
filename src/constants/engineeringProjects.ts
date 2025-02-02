@@ -6,17 +6,17 @@ export const engineeringProjects = [
         stats: [
             {
                 name: "Users",
-                value: "1300+",
+                value: "1400+",
                 iconURI: "user.svg"
             },
             {
                 name: "GitHub",
-                value: "70",
+                value: "71",
                 iconURI: "star.svg"
             },
             {
                 name: "Forks",
-                value: "24",
+                value: "26",
                 iconURI: "fork.svg"
             },
             {
