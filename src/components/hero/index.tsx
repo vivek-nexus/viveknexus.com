@@ -200,6 +200,7 @@ export function Hero() {
                     <div className="relative col-span-1">
                         <motion.div
                             className="absolute right-0 top-1/2 cursor-pointer"
+                            tabIndex={-1}
                             initial={{ x: -400, y: "-50%", opacity: 0.1 }}
                             animate={animationName}
                             variants={{
@@ -243,6 +244,7 @@ export function Hero() {
                     <div className="relative col-span-1">
                         <motion.div
                             className="absolute left-0 top-1/2 cursor-pointer"
+                            tabIndex={-1}
                             initial={{ x: 400, y: "-50%", opacity: 0.1 }}
                             animate={animationName}
                             variants={{
